@@ -1,0 +1,593 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		DB4D71B924C56F9500333C98 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB4D71B824C56F9500333C98 /* AppDelegate.swift */; };
+		DB4D71BB24C56F9500333C98 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB4D71BA24C56F9500333C98 /* SceneDelegate.swift */; };
+		DB4D71BD24C56F9500333C98 /* ViewControllerTop.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB4D71BC24C56F9500333C98 /* ViewControllerTop.swift */; };
+		DB4D71C024C56F9500333C98 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DB4D71BE24C56F9500333C98 /* Main.storyboard */; };
+		DB4D71C224C56F9600333C98 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DB4D71C124C56F9600333C98 /* Assets.xcassets */; };
+		DB4D71C524C56F9600333C98 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DB4D71C324C56F9600333C98 /* LaunchScreen.storyboard */; };
+		DB4D71D024C56F9600333C98 /* FE___Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB4D71CF24C56F9600333C98 /* FE___Tests.swift */; };
+		DB4D71DB24C56F9600333C98 /* FE___UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB4D71DA24C56F9600333C98 /* FE___UITests.swift */; };
+		DB61286224C5933E00B86CAF /* ViewControllerSelectGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB61286124C5933E00B86CAF /* ViewControllerSelectGroup.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		DB4D71CC24C56F9600333C98 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DB4D71AD24C56F9500333C98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DB4D71B424C56F9500333C98;
+			remoteInfo = "FE単語帳";
+		};
+		DB4D71D724C56F9600333C98 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DB4D71AD24C56F9500333C98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DB4D71B424C56F9500333C98;
+			remoteInfo = "FE単語帳";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		DB4D71B524C56F9500333C98 /* FE単語帳.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "FE単語帳.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		DB4D71B824C56F9500333C98 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		DB4D71BA24C56F9500333C98 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		DB4D71BC24C56F9500333C98 /* ViewControllerTop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerTop.swift; sourceTree = "<group>"; };
+		DB4D71BF24C56F9500333C98 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		DB4D71C124C56F9600333C98 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		DB4D71C424C56F9600333C98 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		DB4D71C624C56F9600333C98 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DB4D71CB24C56F9600333C98 /* FE単語帳Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "FE単語帳Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		DB4D71CF24C56F9600333C98 /* FE___Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FE___Tests.swift"; sourceTree = "<group>"; };
+		DB4D71D124C56F9600333C98 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DB4D71D624C56F9600333C98 /* FE単語帳UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "FE単語帳UITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		DB4D71DA24C56F9600333C98 /* FE___UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FE___UITests.swift"; sourceTree = "<group>"; };
+		DB4D71DC24C56F9600333C98 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DB61286124C5933E00B86CAF /* ViewControllerSelectGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerSelectGroup.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		DB4D71B224C56F9500333C98 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DB4D71C824C56F9600333C98 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DB4D71D324C56F9600333C98 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		DB4D71AC24C56F9500333C98 = {
+			isa = PBXGroup;
+			children = (
+				DB4D71B724C56F9500333C98 /* FE単語帳 */,
+				DB4D71CE24C56F9600333C98 /* FE単語帳Tests */,
+				DB4D71D924C56F9600333C98 /* FE単語帳UITests */,
+				DB4D71B624C56F9500333C98 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		DB4D71B624C56F9500333C98 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				DB4D71B524C56F9500333C98 /* FE単語帳.app */,
+				DB4D71CB24C56F9600333C98 /* FE単語帳Tests.xctest */,
+				DB4D71D624C56F9600333C98 /* FE単語帳UITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		DB4D71B724C56F9500333C98 /* FE単語帳 */ = {
+			isa = PBXGroup;
+			children = (
+				DB4D71B824C56F9500333C98 /* AppDelegate.swift */,
+				DB4D71BA24C56F9500333C98 /* SceneDelegate.swift */,
+				DB4D71BC24C56F9500333C98 /* ViewControllerTop.swift */,
+				DB61286124C5933E00B86CAF /* ViewControllerSelectGroup.swift */,
+				DB4D71BE24C56F9500333C98 /* Main.storyboard */,
+				DB4D71C124C56F9600333C98 /* Assets.xcassets */,
+				DB4D71C324C56F9600333C98 /* LaunchScreen.storyboard */,
+				DB4D71C624C56F9600333C98 /* Info.plist */,
+			);
+			path = "FE単語帳";
+			sourceTree = "<group>";
+		};
+		DB4D71CE24C56F9600333C98 /* FE単語帳Tests */ = {
+			isa = PBXGroup;
+			children = (
+				DB4D71CF24C56F9600333C98 /* FE___Tests.swift */,
+				DB4D71D124C56F9600333C98 /* Info.plist */,
+			);
+			path = "FE単語帳Tests";
+			sourceTree = "<group>";
+		};
+		DB4D71D924C56F9600333C98 /* FE単語帳UITests */ = {
+			isa = PBXGroup;
+			children = (
+				DB4D71DA24C56F9600333C98 /* FE___UITests.swift */,
+				DB4D71DC24C56F9600333C98 /* Info.plist */,
+			);
+			path = "FE単語帳UITests";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		DB4D71B424C56F9500333C98 /* FE単語帳 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DB4D71DF24C56F9600333C98 /* Build configuration list for PBXNativeTarget "FE単語帳" */;
+			buildPhases = (
+				DB4D71B124C56F9500333C98 /* Sources */,
+				DB4D71B224C56F9500333C98 /* Frameworks */,
+				DB4D71B324C56F9500333C98 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "FE単語帳";
+			productName = "FE単語帳";
+			productReference = DB4D71B524C56F9500333C98 /* FE単語帳.app */;
+			productType = "com.apple.product-type.application";
+		};
+		DB4D71CA24C56F9600333C98 /* FE単語帳Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DB4D71E224C56F9600333C98 /* Build configuration list for PBXNativeTarget "FE単語帳Tests" */;
+			buildPhases = (
+				DB4D71C724C56F9600333C98 /* Sources */,
+				DB4D71C824C56F9600333C98 /* Frameworks */,
+				DB4D71C924C56F9600333C98 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				DB4D71CD24C56F9600333C98 /* PBXTargetDependency */,
+			);
+			name = "FE単語帳Tests";
+			productName = "FE単語帳Tests";
+			productReference = DB4D71CB24C56F9600333C98 /* FE単語帳Tests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		DB4D71D524C56F9600333C98 /* FE単語帳UITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DB4D71E524C56F9600333C98 /* Build configuration list for PBXNativeTarget "FE単語帳UITests" */;
+			buildPhases = (
+				DB4D71D224C56F9600333C98 /* Sources */,
+				DB4D71D324C56F9600333C98 /* Frameworks */,
+				DB4D71D424C56F9600333C98 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				DB4D71D824C56F9600333C98 /* PBXTargetDependency */,
+			);
+			name = "FE単語帳UITests";
+			productName = "FE単語帳UITests";
+			productReference = DB4D71D624C56F9600333C98 /* FE単語帳UITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		DB4D71AD24C56F9500333C98 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1160;
+				LastUpgradeCheck = 1160;
+				ORGANIZATIONNAME = hiromi.tomioka;
+				TargetAttributes = {
+					DB4D71B424C56F9500333C98 = {
+						CreatedOnToolsVersion = 11.6;
+					};
+					DB4D71CA24C56F9600333C98 = {
+						CreatedOnToolsVersion = 11.6;
+						TestTargetID = DB4D71B424C56F9500333C98;
+					};
+					DB4D71D524C56F9600333C98 = {
+						CreatedOnToolsVersion = 11.6;
+						TestTargetID = DB4D71B424C56F9500333C98;
+					};
+				};
+			};
+			buildConfigurationList = DB4D71B024C56F9500333C98 /* Build configuration list for PBXProject "FE単語帳" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = DB4D71AC24C56F9500333C98;
+			productRefGroup = DB4D71B624C56F9500333C98 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				DB4D71B424C56F9500333C98 /* FE単語帳 */,
+				DB4D71CA24C56F9600333C98 /* FE単語帳Tests */,
+				DB4D71D524C56F9600333C98 /* FE単語帳UITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		DB4D71B324C56F9500333C98 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DB4D71C524C56F9600333C98 /* LaunchScreen.storyboard in Resources */,
+				DB4D71C224C56F9600333C98 /* Assets.xcassets in Resources */,
+				DB4D71C024C56F9500333C98 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DB4D71C924C56F9600333C98 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DB4D71D424C56F9600333C98 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		DB4D71B124C56F9500333C98 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DB4D71BD24C56F9500333C98 /* ViewControllerTop.swift in Sources */,
+				DB4D71B924C56F9500333C98 /* AppDelegate.swift in Sources */,
+				DB61286224C5933E00B86CAF /* ViewControllerSelectGroup.swift in Sources */,
+				DB4D71BB24C56F9500333C98 /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DB4D71C724C56F9600333C98 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DB4D71D024C56F9600333C98 /* FE___Tests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DB4D71D224C56F9600333C98 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DB4D71DB24C56F9600333C98 /* FE___UITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		DB4D71CD24C56F9600333C98 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DB4D71B424C56F9500333C98 /* FE単語帳 */;
+			targetProxy = DB4D71CC24C56F9600333C98 /* PBXContainerItemProxy */;
+		};
+		DB4D71D824C56F9600333C98 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DB4D71B424C56F9500333C98 /* FE単語帳 */;
+			targetProxy = DB4D71D724C56F9600333C98 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		DB4D71BE24C56F9500333C98 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DB4D71BF24C56F9500333C98 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		DB4D71C324C56F9600333C98 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DB4D71C424C56F9600333C98 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		DB4D71DD24C56F9600333C98 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		DB4D71DE24C56F9600333C98 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		DB4D71E024C56F9600333C98 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "FE単語帳/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "training.FE---";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		DB4D71E124C56F9600333C98 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "FE単語帳/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "training.FE---";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		DB4D71E324C56F9600333C98 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "FE単語帳Tests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "training.FE---Tests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FE単語帳.app/FE単語帳";
+			};
+			name = Debug;
+		};
+		DB4D71E424C56F9600333C98 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "FE単語帳Tests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "training.FE---Tests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FE単語帳.app/FE単語帳";
+			};
+			name = Release;
+		};
+		DB4D71E624C56F9600333C98 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "FE単語帳UITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "training.FE---UITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "FE単語帳";
+			};
+			name = Debug;
+		};
+		DB4D71E724C56F9600333C98 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "FE単語帳UITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "training.FE---UITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "FE単語帳";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		DB4D71B024C56F9500333C98 /* Build configuration list for PBXProject "FE単語帳" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DB4D71DD24C56F9600333C98 /* Debug */,
+				DB4D71DE24C56F9600333C98 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DB4D71DF24C56F9600333C98 /* Build configuration list for PBXNativeTarget "FE単語帳" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DB4D71E024C56F9600333C98 /* Debug */,
+				DB4D71E124C56F9600333C98 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DB4D71E224C56F9600333C98 /* Build configuration list for PBXNativeTarget "FE単語帳Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DB4D71E324C56F9600333C98 /* Debug */,
+				DB4D71E424C56F9600333C98 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DB4D71E524C56F9600333C98 /* Build configuration list for PBXNativeTarget "FE単語帳UITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DB4D71E624C56F9600333C98 /* Debug */,
+				DB4D71E724C56F9600333C98 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = DB4D71AD24C56F9500333C98 /* Project object */;
+}
