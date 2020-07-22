@@ -15,7 +15,7 @@ class ViewControllerSelectGroup: UIViewController {
     //初期メソッド
     override func viewDidLoad() {
         super.viewDidLoad()
-        //topTable作成
+        //selectGroupTable作成
         selectGroupTable.dataSource = self
         selectGroupTable.delegate = self
         view.addSubview(selectGroupTable)
@@ -52,8 +52,5 @@ extension ViewControllerSelectGroup: UITableViewDataSource,UITableViewDelegate{
         next.modalPresentationStyle = .fullScreen
         next.receiveMonyhly = monthlyBox[indexPath.row]
         self.present(next, animated: true)*/
-        tableView.deselectRow(at: indexPath, animated: true)
-        tableView.scrollToRow(at: IndexPath(row: selectGroupShowBox.count - 1, section: 0),
-                              at: UITableView.ScrollPosition.bottom, animated: true)
     }
 }

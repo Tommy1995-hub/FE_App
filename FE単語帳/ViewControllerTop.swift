@@ -20,6 +20,7 @@ class ViewControllerTop: UIViewController {
         //topTable作成
         topTableView.dataSource = self
         topTableView.delegate = self
+        topTableView.isScrollEnabled = false
         view.addSubview(topTableView)
     }
 }
@@ -32,9 +33,9 @@ extension ViewControllerTop: UITableViewDataSource,UITableViewDelegate{
     }
     //cellの作成
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        //storyboardからTableViewCell取得
+        //storyboardからcell情報取得
         let cell = tableView.dequeueReusableCell(withIdentifier: "topTableViewCell", for: indexPath as IndexPath)
-        //TableViewCellのLavel作成
+        //cellの作成
         let setText: String = topShowBox[indexPath.row]
         cell.textLabel?.text = setText
         return cell
@@ -43,7 +44,7 @@ extension ViewControllerTop: UITableViewDataSource,UITableViewDelegate{
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)//セルの選択を解除
         let storyboard = self.storyboard!
-        //選択されたCellごとに画面遷移
+        //選択されたcellごとに画面遷移
         //「単語を選択」を押下
         if(indexPath.row == 0){
             let next = storyboard.instantiateViewController(withIdentifier: "ViewControllerSelectGroup") as! ViewControllerSelectGroup
