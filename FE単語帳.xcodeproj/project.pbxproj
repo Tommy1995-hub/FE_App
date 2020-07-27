@@ -3,10 +3,13 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8FEABC1A546BD9DB87AFB8D2 /* Pods_FE___Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B24DA22DEF6DDCEE1E554EC0 /* Pods_FE___Tests.framework */; };
+		A322BE5D8485A2EA82490FAF /* Pods_FE____FE___UITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D277CAD0C277C9004DBB6D8B /* Pods_FE____FE___UITests.framework */; };
+		DB39B4EA24CC877800319E4D /* ViewControllerShowWord.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB39B4E924CC877800319E4D /* ViewControllerShowWord.swift */; };
 		DB4D71B924C56F9500333C98 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB4D71B824C56F9500333C98 /* AppDelegate.swift */; };
 		DB4D71BB24C56F9500333C98 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB4D71BA24C56F9500333C98 /* SceneDelegate.swift */; };
 		DB4D71BD24C56F9500333C98 /* ViewControllerTop.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB4D71BC24C56F9500333C98 /* ViewControllerTop.swift */; };
@@ -16,6 +19,10 @@
 		DB4D71D024C56F9600333C98 /* FE___Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB4D71CF24C56F9600333C98 /* FE___Tests.swift */; };
 		DB4D71DB24C56F9600333C98 /* FE___UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB4D71DA24C56F9600333C98 /* FE___UITests.swift */; };
 		DB61286224C5933E00B86CAF /* ViewControllerSelectGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB61286124C5933E00B86CAF /* ViewControllerSelectGroup.swift */; };
+		DB6EE0EE24C9B3B40029A499 /* wordList.csv in Resources */ = {isa = PBXBuildFile; fileRef = DB6EE0ED24C9B3B40029A499 /* wordList.csv */; };
+		DB6EE0F024C9B8970029A499 /* Word.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB6EE0EF24C9B8970029A499 /* Word.swift */; };
+		DBA0A4AC24C9E4B100D42F6E /* AppInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBA0A4AB24C9E4B100D42F6E /* AppInfo.swift */; };
+		DBA0A4B024CA186E00D42F6E /* ViewControllerSelectWord.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBA0A4AF24CA186E00D42F6E /* ViewControllerSelectWord.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +43,16 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		090967CA2D106B9F2B2B1B87 /* Pods-FE単語帳.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FE単語帳.release.xcconfig"; path = "Target Support Files/Pods-FE単語帳/Pods-FE単語帳.release.xcconfig"; sourceTree = "<group>"; };
+		66691766543CC28008558893 /* Pods-FE単語帳-FE単語帳UITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FE単語帳-FE単語帳UITests.debug.xcconfig"; path = "Target Support Files/Pods-FE単語帳-FE単語帳UITests/Pods-FE単語帳-FE単語帳UITests.debug.xcconfig"; sourceTree = "<group>"; };
+		89C4DEEF2BA178C4858589D1 /* Pods-FE単語帳-FE単語帳UITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FE単語帳-FE単語帳UITests.release.xcconfig"; path = "Target Support Files/Pods-FE単語帳-FE単語帳UITests/Pods-FE単語帳-FE単語帳UITests.release.xcconfig"; sourceTree = "<group>"; };
+		9AF58A0DD6AAE1EA48C8C71F /* Pods-FE単語帳Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FE単語帳Tests.release.xcconfig"; path = "Target Support Files/Pods-FE単語帳Tests/Pods-FE単語帳Tests.release.xcconfig"; sourceTree = "<group>"; };
+		B24DA22DEF6DDCEE1E554EC0 /* Pods_FE___Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = "Pods_FE___Tests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C0B7DD6BD8DF8BE1F9C9441D /* Pods_FE___.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = "Pods_FE___.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		CB40A22F7A5B2CD7CD69DAA0 /* Pods-FE単語帳Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FE単語帳Tests.debug.xcconfig"; path = "Target Support Files/Pods-FE単語帳Tests/Pods-FE単語帳Tests.debug.xcconfig"; sourceTree = "<group>"; };
+		D277CAD0C277C9004DBB6D8B /* Pods_FE____FE___UITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = "Pods_FE____FE___UITests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		DA7DCA3D23F9D22A2EF4DA0F /* Pods-FE単語帳.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FE単語帳.debug.xcconfig"; path = "Target Support Files/Pods-FE単語帳/Pods-FE単語帳.debug.xcconfig"; sourceTree = "<group>"; };
+		DB39B4E924CC877800319E4D /* ViewControllerShowWord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerShowWord.swift; sourceTree = "<group>"; };
 		DB4D71B524C56F9500333C98 /* FE単語帳.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "FE単語帳.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DB4D71B824C56F9500333C98 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DB4D71BA24C56F9500333C98 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -51,6 +68,10 @@
 		DB4D71DA24C56F9600333C98 /* FE___UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FE___UITests.swift"; sourceTree = "<group>"; };
 		DB4D71DC24C56F9600333C98 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DB61286124C5933E00B86CAF /* ViewControllerSelectGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerSelectGroup.swift; sourceTree = "<group>"; };
+		DB6EE0ED24C9B3B40029A499 /* wordList.csv */ = {isa = PBXFileReference; lastKnownFileType = text; path = wordList.csv; sourceTree = "<group>"; };
+		DB6EE0EF24C9B8970029A499 /* Word.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Word.swift; sourceTree = "<group>"; };
+		DBA0A4AB24C9E4B100D42F6E /* AppInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppInfo.swift; sourceTree = "<group>"; };
+		DBA0A4AF24CA186E00D42F6E /* ViewControllerSelectWord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerSelectWord.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +86,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8FEABC1A546BD9DB87AFB8D2 /* Pods_FE___Tests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -72,12 +94,36 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A322BE5D8485A2EA82490FAF /* Pods_FE____FE___UITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		10394DA5653D7ED0EB7217AA /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				DA7DCA3D23F9D22A2EF4DA0F /* Pods-FE単語帳.debug.xcconfig */,
+				090967CA2D106B9F2B2B1B87 /* Pods-FE単語帳.release.xcconfig */,
+				66691766543CC28008558893 /* Pods-FE単語帳-FE単語帳UITests.debug.xcconfig */,
+				89C4DEEF2BA178C4858589D1 /* Pods-FE単語帳-FE単語帳UITests.release.xcconfig */,
+				CB40A22F7A5B2CD7CD69DAA0 /* Pods-FE単語帳Tests.debug.xcconfig */,
+				9AF58A0DD6AAE1EA48C8C71F /* Pods-FE単語帳Tests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		16B616B6D38610EB1D1DB71A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C0B7DD6BD8DF8BE1F9C9441D /* Pods_FE___.framework */,
+				D277CAD0C277C9004DBB6D8B /* Pods_FE____FE___UITests.framework */,
+				B24DA22DEF6DDCEE1E554EC0 /* Pods_FE___Tests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		DB4D71AC24C56F9500333C98 = {
 			isa = PBXGroup;
 			children = (
@@ -85,6 +131,8 @@
 				DB4D71CE24C56F9600333C98 /* FE単語帳Tests */,
 				DB4D71D924C56F9600333C98 /* FE単語帳UITests */,
 				DB4D71B624C56F9500333C98 /* Products */,
+				10394DA5653D7ED0EB7217AA /* Pods */,
+				16B616B6D38610EB1D1DB71A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -105,7 +153,12 @@
 				DB4D71BA24C56F9500333C98 /* SceneDelegate.swift */,
 				DB4D71BC24C56F9500333C98 /* ViewControllerTop.swift */,
 				DB61286124C5933E00B86CAF /* ViewControllerSelectGroup.swift */,
+				DBA0A4AF24CA186E00D42F6E /* ViewControllerSelectWord.swift */,
+				DB39B4E924CC877800319E4D /* ViewControllerShowWord.swift */,
+				DB6EE0EF24C9B8970029A499 /* Word.swift */,
+				DBA0A4AB24C9E4B100D42F6E /* AppInfo.swift */,
 				DB4D71BE24C56F9500333C98 /* Main.storyboard */,
+				DB6EE0ED24C9B3B40029A499 /* wordList.csv */,
 				DB4D71C124C56F9600333C98 /* Assets.xcassets */,
 				DB4D71C324C56F9600333C98 /* LaunchScreen.storyboard */,
 				DB4D71C624C56F9600333C98 /* Info.plist */,
@@ -138,9 +191,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = DB4D71DF24C56F9600333C98 /* Build configuration list for PBXNativeTarget "FE単語帳" */;
 			buildPhases = (
+				E08E4478E1E754AF6521C9B6 /* [CP] Check Pods Manifest.lock */,
 				DB4D71B124C56F9500333C98 /* Sources */,
 				DB4D71B224C56F9500333C98 /* Frameworks */,
 				DB4D71B324C56F9500333C98 /* Resources */,
+				F1EE9DA617591E1E09FC506D /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -155,6 +210,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = DB4D71E224C56F9600333C98 /* Build configuration list for PBXNativeTarget "FE単語帳Tests" */;
 			buildPhases = (
+				46319E2FB1EF25B48B61D046 /* [CP] Check Pods Manifest.lock */,
 				DB4D71C724C56F9600333C98 /* Sources */,
 				DB4D71C824C56F9600333C98 /* Frameworks */,
 				DB4D71C924C56F9600333C98 /* Resources */,
@@ -173,9 +229,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = DB4D71E524C56F9600333C98 /* Build configuration list for PBXNativeTarget "FE単語帳UITests" */;
 			buildPhases = (
+				C5B06CA453F8D9AE947ADEBC /* [CP] Check Pods Manifest.lock */,
 				DB4D71D224C56F9600333C98 /* Sources */,
 				DB4D71D324C56F9600333C98 /* Frameworks */,
 				DB4D71D424C56F9600333C98 /* Resources */,
+				D1BFEA2B41F4D4E972761AB5 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -237,6 +295,7 @@
 			files = (
 				DB4D71C524C56F9600333C98 /* LaunchScreen.storyboard in Resources */,
 				DB4D71C224C56F9600333C98 /* Assets.xcassets in Resources */,
+				DB6EE0EE24C9B3B40029A499 /* wordList.csv in Resources */,
 				DB4D71C024C56F9500333C98 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -257,6 +316,109 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		46319E2FB1EF25B48B61D046 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-FE単語帳Tests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C5B06CA453F8D9AE947ADEBC /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-FE単語帳-FE単語帳UITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D1BFEA2B41F4D4E972761AB5 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-FE単語帳-FE単語帳UITests/Pods-FE単語帳-FE単語帳UITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-FE単語帳-FE単語帳UITests/Pods-FE単語帳-FE単語帳UITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-FE単語帳-FE単語帳UITests/Pods-FE単語帳-FE単語帳UITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E08E4478E1E754AF6521C9B6 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-FE単語帳-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F1EE9DA617591E1E09FC506D /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-FE単語帳/Pods-FE単語帳-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-FE単語帳/Pods-FE単語帳-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-FE単語帳/Pods-FE単語帳-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		DB4D71B124C56F9500333C98 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -264,8 +426,12 @@
 			files = (
 				DB4D71BD24C56F9500333C98 /* ViewControllerTop.swift in Sources */,
 				DB4D71B924C56F9500333C98 /* AppDelegate.swift in Sources */,
+				DB6EE0F024C9B8970029A499 /* Word.swift in Sources */,
+				DB39B4EA24CC877800319E4D /* ViewControllerShowWord.swift in Sources */,
 				DB61286224C5933E00B86CAF /* ViewControllerSelectGroup.swift in Sources */,
+				DBA0A4B024CA186E00D42F6E /* ViewControllerSelectWord.swift in Sources */,
 				DB4D71BB24C56F9500333C98 /* SceneDelegate.swift in Sources */,
+				DBA0A4AC24C9E4B100D42F6E /* AppInfo.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -436,6 +602,7 @@
 		};
 		DB4D71E024C56F9600333C98 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DA7DCA3D23F9D22A2EF4DA0F /* Pods-FE単語帳.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -453,6 +620,7 @@
 		};
 		DB4D71E124C56F9600333C98 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 090967CA2D106B9F2B2B1B87 /* Pods-FE単語帳.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -470,6 +638,7 @@
 		};
 		DB4D71E324C56F9600333C98 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CB40A22F7A5B2CD7CD69DAA0 /* Pods-FE単語帳Tests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -491,6 +660,7 @@
 		};
 		DB4D71E424C56F9600333C98 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9AF58A0DD6AAE1EA48C8C71F /* Pods-FE単語帳Tests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -512,6 +682,7 @@
 		};
 		DB4D71E624C56F9600333C98 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 66691766543CC28008558893 /* Pods-FE単語帳-FE単語帳UITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -531,6 +702,7 @@
 		};
 		DB4D71E724C56F9600333C98 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 89C4DEEF2BA178C4858589D1 /* Pods-FE単語帳-FE単語帳UITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;

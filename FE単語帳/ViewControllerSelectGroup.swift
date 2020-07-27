@@ -6,12 +6,13 @@
 //  Copyright © 2020 hiromi.tomioka. All rights reserved.
 //
 
+import Foundation
 import UIKit
 
 class ViewControllerSelectGroup: UIViewController {
     @IBOutlet weak var selectGroupTable: UITableView!
     var selectGroupShowBox: [String] =
-        ["あ行","か行","さ行","た行","な行","は行","ま行","や行","ら行","わ行","A〜E","F〜J","K〜O","P〜T","U〜Z"]
+        ["あ行","か行","さ行","た行","な行","は行","ま行","や行","ら行","わ行","A〜E","F〜J","K〜O","P〜T","U〜Z","数字/記号"]
     //初期メソッド
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -46,11 +47,11 @@ extension ViewControllerSelectGroup: UITableViewDataSource,UITableViewDelegate{
     //cellタップ時処理
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)// セルの選択を解除
-        //選択された年、月情報を次画面に渡す&画面遷移
-        /*let storyboard = self.storyboard!
-        let next = storyboard.instantiateViewController(withIdentifier: "ViewControllerDaily") as! ViewControllerDaily
+        //選択されたcellのグループ情報を渡す&画面遷移
+        let storyboard = self.storyboard!
+        let next = storyboard.instantiateViewController(withIdentifier: "ViewControllerSelectWord") as! ViewControllerSelectWord
         next.modalPresentationStyle = .fullScreen
-        next.receiveMonyhly = monthlyBox[indexPath.row]
-        self.present(next, animated: true)*/
+        next.receiveGroupInfo = indexPath.row
+        self.present(next, animated: true)
     }
 }

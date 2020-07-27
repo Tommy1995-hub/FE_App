@@ -1,0 +1,4 @@
+${PODS_ROOT}/Target Support Files/Pods-FE単語帳/Pods-FE単語帳-frameworks.sh
+${BUILT_PRODUCTS_DIR}/HeartButton/HeartButton.framework
+${BUILT_PRODUCTS_DIR}/Realm/Realm.framework
+${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework

@@ -6,22 +6,44 @@
 //  Copyright © 2020 hiromi.tomioka. All rights reserved.
 //
 
+import Foundation
 import UIKit
+import RealmSwift
 
 class ViewControllerTop: UIViewController {
     @IBOutlet weak var topTableView: UITableView!
     var topShowBox: [String] = ["単語を選択","お気に入りを表示","ランダムに表示","Twitterでつぶやく"]
+    let config = Realm.Configuration(schemaVersion: 1)
     //初期メソッド
     override func viewDidLoad() {
         super.viewDidLoad()
-        //ナビゲーションバーの枠線削除
-        UINavigationBar.self.appearance().setBackgroundImage(UIImage(), for: UIBarMetrics.default)
-        UINavigationBar.self.appearance().shadowImage = UIImage()
         //topTable作成
         topTableView.dataSource = self
         topTableView.delegate = self
         topTableView.isScrollEnabled = false
         view.addSubview(topTableView)
+        // RealmからWord情報取得
+        let realm = try! Realm(configuration:config)
+        let wordInfo = realm.objects(Word.self)
+        
+        /*try! realm.write {
+          realm.deleteAll()
+        }*/
+        //初回DBプリセット処理
+        if(wordInfo.isEmpty){
+            //csvデータ登録
+            Word().setCsvData()
+            //AppInfo情報を登録
+            let setAppInfo = AppInfo()
+            setAppInfo.hideFlag = 0
+            setAppInfo.inputWordNum = 0
+            do {
+                try realm.write {
+                    realm.add(setAppInfo)
+                }
+            } catch {
+            }
+        }
     }
 }
 

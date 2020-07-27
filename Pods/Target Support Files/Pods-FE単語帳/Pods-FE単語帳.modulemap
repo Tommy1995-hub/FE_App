@@ -1,0 +1,6 @@
+framework module Pods_FE___ {
+  umbrella header "Pods-FE単語帳-umbrella.h"
+
+  export *
+  module * { export * }
+}
