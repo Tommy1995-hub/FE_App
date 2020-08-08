@@ -23,6 +23,7 @@
 		DB6EE0F024C9B8970029A499 /* Word.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB6EE0EF24C9B8970029A499 /* Word.swift */; };
 		DBA0A4AC24C9E4B100D42F6E /* AppInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBA0A4AB24C9E4B100D42F6E /* AppInfo.swift */; };
 		DBA0A4B024CA186E00D42F6E /* ViewControllerSelectWord.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBA0A4AF24CA186E00D42F6E /* ViewControllerSelectWord.swift */; };
+		DBF13F3E24D7EF44004910F1 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DBF13F3D24D7EF44004910F1 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,11 +68,13 @@
 		DB4D71D624C56F9600333C98 /* FE単語帳UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "FE単語帳UITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DB4D71DA24C56F9600333C98 /* FE___UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FE___UITests.swift"; sourceTree = "<group>"; };
 		DB4D71DC24C56F9600333C98 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DB552D4524D8024000A14630 /* FE単語帳.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "FE単語帳.entitlements"; sourceTree = "<group>"; };
 		DB61286124C5933E00B86CAF /* ViewControllerSelectGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerSelectGroup.swift; sourceTree = "<group>"; };
 		DB6EE0ED24C9B3B40029A499 /* wordList.csv */ = {isa = PBXFileReference; lastKnownFileType = text; path = wordList.csv; sourceTree = "<group>"; };
 		DB6EE0EF24C9B8970029A499 /* Word.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Word.swift; sourceTree = "<group>"; };
 		DBA0A4AB24C9E4B100D42F6E /* AppInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppInfo.swift; sourceTree = "<group>"; };
 		DBA0A4AF24CA186E00D42F6E /* ViewControllerSelectWord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerSelectWord.swift; sourceTree = "<group>"; };
+		DBF13F3D24D7EF44004910F1 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -158,10 +161,12 @@
 				DB6EE0EF24C9B8970029A499 /* Word.swift */,
 				DBA0A4AB24C9E4B100D42F6E /* AppInfo.swift */,
 				DB4D71BE24C56F9500333C98 /* Main.storyboard */,
-				DB6EE0ED24C9B3B40029A499 /* wordList.csv */,
 				DB4D71C124C56F9600333C98 /* Assets.xcassets */,
 				DB4D71C324C56F9600333C98 /* LaunchScreen.storyboard */,
 				DB4D71C624C56F9600333C98 /* Info.plist */,
+				DB552D4524D8024000A14630 /* FE単語帳.entitlements */,
+				DBF13F3D24D7EF44004910F1 /* GoogleService-Info.plist */,
+				DB6EE0ED24C9B3B40029A499 /* wordList.csv */,
 			);
 			path = "FE単語帳";
 			sourceTree = "<group>";
@@ -295,6 +300,7 @@
 			files = (
 				DB4D71C524C56F9600333C98 /* LaunchScreen.storyboard in Resources */,
 				DB4D71C224C56F9600333C98 /* Assets.xcassets in Resources */,
+				DBF13F3E24D7EF44004910F1 /* GoogleService-Info.plist in Resources */,
 				DB6EE0EE24C9B3B40029A499 /* wordList.csv in Resources */,
 				DB4D71C024C56F9500333C98 /* Main.storyboard in Resources */,
 			);
@@ -518,6 +524,7 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_STYLE = Automatic;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -578,6 +585,7 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_STYLE = Automatic;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
@@ -605,13 +613,15 @@
 			baseConfigurationReference = DA7DCA3D23F9D22A2EF4DA0F /* Pods-FE単語帳.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "FE単語帳/FE単語帳.entitlements";
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = PZ57CQX5S8;
 				INFOPLIST_FILE = "FE単語帳/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "training.FE---";
+				PRODUCT_BUNDLE_IDENTIFIER = "firstApp.FE-App";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -623,13 +633,15 @@
 			baseConfigurationReference = 090967CA2D106B9F2B2B1B87 /* Pods-FE単語帳.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "FE単語帳/FE単語帳.entitlements";
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = PZ57CQX5S8;
 				INFOPLIST_FILE = "FE単語帳/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "training.FE---";
+				PRODUCT_BUNDLE_IDENTIFIER = "firstApp.FE-App";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

@@ -13,8 +13,10 @@ import HeartButton
 
 class ViewControllerShowWord: UIViewController {
     @IBOutlet weak var showWordCollection: UICollectionView!
+    @IBOutlet weak var nextButton: UIBarButtonItem!
     let config = Realm.Configuration(schemaVersion: 1)
     var WordInfo:Word = Word()
+    var pressedRandom:Int = 0
     //初期メソッド
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,6 +25,11 @@ class ViewControllerShowWord: UIViewController {
         showWordCollection.dataSource = self
         showWordCollection.isScrollEnabled = false
         view.addSubview(showWordCollection)
+        // 「ランダムに表示」から遷移した場合のみ「次へ」ボタン表示
+        if(pressedRandom != 1){
+            nextButton.isEnabled = false
+            nextButton.tintColor = UIColor.clear
+        }
     }
     
     //View表示後処理
@@ -82,6 +89,16 @@ class ViewControllerShowWord: UIViewController {
                 appInfo[0].hideFlag = 1
             }
         }
+    }
+    
+    //次へボタン押下
+    @IBAction func pressNext(_ sender: Any) {
+        // RealmからWord情報取得
+        let realm = try! Realm(configuration:config)
+        let wordInfo = realm.objects(Word.self)
+        WordInfo = wordInfo.randomElement()!
+        //View再表示
+        showWordCollection.reloadData()
     }
     
     //戻るボタン押下

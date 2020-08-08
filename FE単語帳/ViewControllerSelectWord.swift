@@ -15,6 +15,7 @@ class ViewControllerSelectWord: UIViewController {
     let config = Realm.Configuration(schemaVersion: 1)
     var selectWordShowBox: [Word] = []
     var receiveGroupInfo:Int = 99
+    var pressedFavorite:Int = 0
     //初期メソッド
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,12 +23,31 @@ class ViewControllerSelectWord: UIViewController {
         selectWordTable.dataSource = self
         selectWordTable.delegate = self
         view.addSubview(selectWordTable)
-        // Realmから該当情報取得
-        let realm = try! Realm(configuration:config)
-        let wordInfo = realm.objects(Word.self).filter("group == \(receiveGroupInfo)")
-        //取得データをselectWordShowBoxに設定
-        for word in wordInfo {
-            selectWordShowBox.append(word)
+        // 「単語を選択」から遷移した場合、DBから該当データ取得
+        if(pressedFavorite != 1){
+            let realm = try! Realm(configuration:config)
+            let wordInfo = realm.objects(Word.self).filter("group == \(receiveGroupInfo)").sorted(byKeyPath: "word", ascending: true)
+            //取得データをselectWordShowBoxに設定
+            for word in wordInfo {
+                selectWordShowBox.append(word)
+            }
+        }
+    }
+    
+    //View表示前処理
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        // 「お気に入りを表示」から遷移した場合、DBから該当データ取得
+        if(pressedFavorite == 1){
+            selectWordShowBox = []
+            let realm = try! Realm(configuration:config)
+            let wordInfo = realm.objects(Word.self).filter("favoriteFlag == 1").sorted(byKeyPath: "word", ascending: true)
+            //取得データをselectWordShowBoxに設定
+            for word in wordInfo {
+                selectWordShowBox.append(word)
+            }
+            //View再表示
+            selectWordTable.reloadData()
         }
     }
     

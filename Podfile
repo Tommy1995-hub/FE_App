@@ -8,6 +8,9 @@ target 'FE単語帳' do
   # Pods for FE単語帳
   pod 'RealmSwift'
   pod 'HeartButton'
+  pod 'Firebase/Analytics'
+  pod 'Firebase/Core'
+  pod 'Firebase/DynamicLinks'
 
   target 'FE単語帳Tests' do
     inherit! :search_paths

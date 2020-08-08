@@ -155,6 +155,11 @@
                                                 <action selector="pressReturn:" destination="wi5-Mb-IRT" id="5cD-qu-v22"/>
                                             </connections>
                                         </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" title="次へ" id="6PR-9N-KXM">
+                                            <connections>
+                                                <action selector="pressNext:" destination="wi5-Mb-IRT" id="Vq7-ss-xFB"/>
+                                            </connections>
+                                        </barButtonItem>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
@@ -256,6 +261,7 @@
                         <viewLayoutGuide key="safeArea" id="4Db-6e-9f1"/>
                     </view>
                     <connections>
+                        <outlet property="nextButton" destination="6PR-9N-KXM" id="CYP-ZV-YDS"/>
                         <outlet property="showWordCollection" destination="qsH-KC-YWu" id="qgP-UD-TKb"/>
                     </connections>
                 </viewController>

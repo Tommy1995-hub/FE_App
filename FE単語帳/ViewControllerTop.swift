@@ -75,15 +75,29 @@ extension ViewControllerTop: UITableViewDataSource,UITableViewDelegate{
         }
         //「お気に入りを表示」を押下
         else if(indexPath.row == 1){
-            
+            let next = storyboard.instantiateViewController(withIdentifier: "ViewControllerSelectWord") as! ViewControllerSelectWord
+            next.modalPresentationStyle = .fullScreen
+            next.pressedFavorite = 1
+            self.present(next, animated: true)
         }
         //「ランダムに表示」を押下
         else if(indexPath.row == 2){
-            
+            let next = storyboard.instantiateViewController(withIdentifier: "ViewControllerShowWord") as! ViewControllerShowWord
+            next.modalPresentationStyle = .fullScreen
+            let realm = try! Realm(configuration:config)
+            let wordInfo = realm.objects(Word.self)
+            next.WordInfo = wordInfo.randomElement()!
+            next.pressedRandom = 1
+            self.present(next, animated: true)
         }
         //「Twitterでつぶやく」を押下
         else if(indexPath.row == 3){
-            
+            /*let text = "本日のインプット単語数："
+            let encodedText = text.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)
+            if let encodedText = encodedText,
+                let url = URL(string: "https://twitter.com/intent/tweet?text=\(encodedText)") {
+                UIApplication.shared.open(url, options: [:], completionHandler: nil)
+            }*/
         }
         else{
             //処理なし
