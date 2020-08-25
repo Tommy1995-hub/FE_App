@@ -15,7 +15,8 @@ class ViewControllerSelectWord: UIViewController {
     let config = Realm.Configuration(schemaVersion: 2)
     var selectWordShowBox: [Word] = []
     var receiveGroupInfo:Int = 99
-    var pressedFavorite:Int = 0
+    //前画面情報 0:単語を選択 1:分野から選択 2:お気に入りを表示
+    var previousScreenInfo:Int = 0
     //初期メソッド
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,13 +24,24 @@ class ViewControllerSelectWord: UIViewController {
         selectWordTable.dataSource = self
         selectWordTable.delegate = self
         view.addSubview(selectWordTable)
-        // 「単語を選択」から遷移した場合、DBから該当データ取得
-        if(pressedFavorite != 1){
+        // 「単語を選択」「分野から選択」から遷移した場合、DBから該当データ取得
+        if(previousScreenInfo != 2){
             let realm = try! Realm(configuration:config)
-            let wordInfo = realm.objects(Word.self).filter("group == \(receiveGroupInfo)").sorted(byKeyPath: "furigana", ascending: true)
-            //取得データをselectWordShowBoxに設定
-            for word in wordInfo {
-                selectWordShowBox.append(word)
+            //「単語を選択」から遷移
+            if(previousScreenInfo == 0){
+                let wordInfo = realm.objects(Word.self).filter("group == \(receiveGroupInfo)").sorted(byKeyPath: "furigana", ascending: true)
+                //取得データをselectWordShowBoxに設定
+                for word in wordInfo {
+                    selectWordShowBox.append(word)
+                }
+            }
+            //「分野から選択」から遷移
+            else{
+                let wordInfo = realm.objects(Word.self).filter("field == \(receiveGroupInfo)").sorted(byKeyPath: "furigana", ascending: true)
+                //取得データをselectWordShowBoxに設定
+                for word in wordInfo {
+                    selectWordShowBox.append(word)
+                }
             }
         }
     }
@@ -38,7 +50,7 @@ class ViewControllerSelectWord: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         // 「お気に入りを表示」から遷移した場合、DBから該当データ取得
-        if(pressedFavorite == 1){
+        if(previousScreenInfo == 2){
             selectWordShowBox = []
             let realm = try! Realm(configuration:config)
             let wordInfo = realm.objects(Word.self).filter("favoriteFlag == 1").sorted(byKeyPath: "furigana", ascending: true)

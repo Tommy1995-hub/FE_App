@@ -12,7 +12,7 @@ import RealmSwift
 
 class ViewControllerTop: UIViewController {
     @IBOutlet weak var topTableView: UITableView!
-    var topShowBox: [String] = ["単語を選択","お気に入りを表示","ランダムに表示","Twitterでつぶやく"]
+    var topShowBox: [String] = ["単語を選択","分野から選択","お気に入りを表示","ランダムに表示","Twitterでつぶやく"]
     let config = Realm.Configuration(schemaVersion: 2)
     //初期メソッド
     override func viewDidLoad() {
@@ -73,15 +73,22 @@ extension ViewControllerTop: UITableViewDataSource,UITableViewDelegate{
             next.modalPresentationStyle = .fullScreen
             self.present(next, animated: true)
         }
+        //「分野から選択」を押下
+        if(indexPath.row == 1){
+            let next = storyboard.instantiateViewController(withIdentifier: "ViewControllerSelectGroup") as! ViewControllerSelectGroup
+            next.modalPresentationStyle = .fullScreen
+            next.previousScreenInfo = 1
+            self.present(next, animated: true)
+        }
         //「お気に入りを表示」を押下
-        else if(indexPath.row == 1){
+        else if(indexPath.row == 2){
             let next = storyboard.instantiateViewController(withIdentifier: "ViewControllerSelectWord") as! ViewControllerSelectWord
             next.modalPresentationStyle = .fullScreen
-            next.pressedFavorite = 1
+            next.previousScreenInfo = 2
             self.present(next, animated: true)
         }
         //「ランダムに表示」を押下
-        else if(indexPath.row == 2){
+        else if(indexPath.row == 3){
             let next = storyboard.instantiateViewController(withIdentifier: "ViewControllerShowWord") as! ViewControllerShowWord
             next.modalPresentationStyle = .fullScreen
             let realm = try! Realm(configuration:config)
@@ -91,7 +98,7 @@ extension ViewControllerTop: UITableViewDataSource,UITableViewDelegate{
             self.present(next, animated: true)
         }
         //「Twitterでつぶやく」を押下
-        else if(indexPath.row == 3){
+        else if(indexPath.row == 4){
             /*let text = "本日のインプット単語数："
             let encodedText = text.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)
             if let encodedText = encodedText,

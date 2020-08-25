@@ -11,8 +11,14 @@ import UIKit
 
 class ViewControllerSelectGroup: UIViewController {
     @IBOutlet weak var selectGroupTable: UITableView!
-    var selectGroupShowBox: [String] =
-        ["あ行","か行","さ行","た行","な行","は行","ま行","や行","ら行","わ行","A〜E","F〜J","K〜O","P〜T","U〜Z","数字/記号"]
+    var selectGroupShowBox: [String] = []
+    var groupBox: [String] =
+        ["数字/記号","A〜E","F〜J","K〜O","P〜T","U〜Z","あ行","か行","さ行","た行","な行","は行","ま行","や行","ら行","わ行"]
+    var fieldBox: [String] =
+    ["基礎理論","アルゴリズムとプログラミング","コンピュータ構成要素","システム構成要素","ソフトウェア","ハードウェア","ヒューマンインターフェース","マルチメディア","データベース","ネットワーク","セキュリティ","システム開発技術","ソフトウェア開発管理技術","プロジェクトマネジメント","サービスマネジメント","システム監査","システム戦略","システム企画","経営戦略マネジメント","技術戦略マネジメント","ビジネスインダストリ","企業活動","法務"]
+    //前画面情報 0:単語を選択 1:分野から選択
+    var previousScreenInfo:Int = 0
+    
     //初期メソッド
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,6 +26,14 @@ class ViewControllerSelectGroup: UIViewController {
         selectGroupTable.dataSource = self
         selectGroupTable.delegate = self
         view.addSubview(selectGroupTable)
+        //「分野から選択」が押された
+        if(previousScreenInfo == 1){
+            selectGroupShowBox = fieldBox
+        }
+        //「単語を選択」が押された
+        else{
+            selectGroupShowBox = groupBox
+        }
     }
     
     //戻るボタン押下
@@ -52,6 +66,7 @@ extension ViewControllerSelectGroup: UITableViewDataSource,UITableViewDelegate{
         let next = storyboard.instantiateViewController(withIdentifier: "ViewControllerSelectWord") as! ViewControllerSelectWord
         next.modalPresentationStyle = .fullScreen
         next.receiveGroupInfo = indexPath.row
+        next.previousScreenInfo = previousScreenInfo
         self.present(next, animated: true)
     }
 }
