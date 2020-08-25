@@ -12,7 +12,7 @@ import RealmSwift
 
 class ViewControllerSelectWord: UIViewController {
     @IBOutlet weak var selectWordTable: UITableView!
-    let config = Realm.Configuration(schemaVersion: 1)
+    let config = Realm.Configuration(schemaVersion: 2)
     var selectWordShowBox: [Word] = []
     var receiveGroupInfo:Int = 99
     var pressedFavorite:Int = 0
@@ -26,7 +26,7 @@ class ViewControllerSelectWord: UIViewController {
         // 「単語を選択」から遷移した場合、DBから該当データ取得
         if(pressedFavorite != 1){
             let realm = try! Realm(configuration:config)
-            let wordInfo = realm.objects(Word.self).filter("group == \(receiveGroupInfo)").sorted(byKeyPath: "word", ascending: true)
+            let wordInfo = realm.objects(Word.self).filter("group == \(receiveGroupInfo)").sorted(byKeyPath: "furigana", ascending: true)
             //取得データをselectWordShowBoxに設定
             for word in wordInfo {
                 selectWordShowBox.append(word)
@@ -41,7 +41,7 @@ class ViewControllerSelectWord: UIViewController {
         if(pressedFavorite == 1){
             selectWordShowBox = []
             let realm = try! Realm(configuration:config)
-            let wordInfo = realm.objects(Word.self).filter("favoriteFlag == 1").sorted(byKeyPath: "word", ascending: true)
+            let wordInfo = realm.objects(Word.self).filter("favoriteFlag == 1").sorted(byKeyPath: "furigana", ascending: true)
             //取得データをselectWordShowBoxに設定
             for word in wordInfo {
                 selectWordShowBox.append(word)

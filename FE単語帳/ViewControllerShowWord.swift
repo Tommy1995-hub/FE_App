@@ -14,7 +14,7 @@ import HeartButton
 class ViewControllerShowWord: UIViewController {
     @IBOutlet weak var showWordCollection: UICollectionView!
     @IBOutlet weak var nextButton: UIBarButtonItem!
-    let config = Realm.Configuration(schemaVersion: 1)
+    let config = Realm.Configuration(schemaVersion: 2)
     var WordInfo:Word = Word()
     var pressedRandom:Int = 0
     //初期メソッド

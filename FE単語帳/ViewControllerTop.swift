@@ -13,7 +13,7 @@ import RealmSwift
 class ViewControllerTop: UIViewController {
     @IBOutlet weak var topTableView: UITableView!
     var topShowBox: [String] = ["単語を選択","お気に入りを表示","ランダムに表示","Twitterでつぶやく"]
-    let config = Realm.Configuration(schemaVersion: 1)
+    let config = Realm.Configuration(schemaVersion: 2)
     //初期メソッド
     override func viewDidLoad() {
         super.viewDidLoad()

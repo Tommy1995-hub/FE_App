@@ -13,8 +13,10 @@ import RealmSwift
 class Word: Object {
     //メンバ変数
     @objc dynamic var word:String = ""
+    @objc dynamic var furigana:String = ""
     @objc dynamic var explanation:String = ""
     @objc dynamic var group:Int = 99
+    @objc dynamic var field:Int = 99
     @objc dynamic var favoriteFlag:Int = 0
     
     //csvファイルのデータを読み出し、Realmにセット
@@ -36,7 +38,7 @@ class Word: Object {
             return
         }
         //Realmオブジェクト生成
-        let config = Realm.Configuration(schemaVersion: 1)
+        let config = Realm.Configuration(schemaVersion: 2)
         let realm = try! Realm(configuration:config)
         //csvStrArrayごとにRealmに保存
         for wordInfo in csvStrArray {
@@ -44,9 +46,11 @@ class Word: Object {
             let wordMember = wordInfo.components(separatedBy: ",")
             let addWord = Word()
             addWord.word = wordMember[0]
-            addWord.explanation = wordMember[1]
-            addWord.group = Int(wordMember[2])!
-            addWord.favoriteFlag = Int(wordMember[3])!
+            addWord.furigana = wordMember[1]
+            addWord.explanation = wordMember[2]
+            addWord.group = Int(wordMember[3])!
+            addWord.field = Int(wordMember[4])!
+            addWord.favoriteFlag = Int(wordMember[5])!
             // 保存処理
             do {
                 try realm.write {
