@@ -114,7 +114,7 @@
                                 </items>
                             </navigationBar>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="0.98280419460000001" blue="0.75212638399999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="1" green="0.98248648317153808" blue="0.76420937635832686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="40e-bp-ZFU" firstAttribute="trailing" secondItem="xde-UI-zfG" secondAttribute="trailing" id="1P4-CL-VQf"/>
                             <constraint firstItem="40e-bp-ZFU" firstAttribute="top" secondItem="xde-UI-zfG" secondAttribute="top" id="Hqw-sn-RsR"/>
@@ -177,18 +177,19 @@
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="wordCell" id="kBH-G8-1ZW">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="128"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="Xpk-XM-jvJ">
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="Kis-eq-uJu">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="128"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="idK-04-Q08">
-                                                    <rect key="frame" x="28" y="49" width="60" height="30"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.29999999999999999" translatesAutoresizingMaskIntoConstraints="NO" id="idK-04-Q08">
+                                                    <rect key="frame" x="20" y="49" width="59.5" height="30"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H50-bN-gdO">
-                                                    <rect key="frame" x="316" y="78" width="70" height="30"/>
+                                                    <rect key="frame" x="324" y="78" width="70" height="30"/>
                                                     <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="30" id="B6z-5H-cql"/>
@@ -203,7 +204,7 @@
                                                     </connections>
                                                 </button>
                                                 <view tag="2" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aJk-Do-YXF" customClass="HeartButton" customModule="HeartButton">
-                                                    <rect key="frame" x="336" y="20" width="30" height="30"/>
+                                                    <rect key="frame" x="344" y="20" width="30" height="30"/>
                                                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="30" id="O8f-Ij-8m1"/>
@@ -212,12 +213,10 @@
                                                 </view>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="aJk-Do-YXF" firstAttribute="top" secondItem="Xpk-XM-jvJ" secondAttribute="top" constant="20" id="Dwh-by-1A7"/>
-                                                <constraint firstAttribute="trailing" secondItem="H50-bN-gdO" secondAttribute="trailing" constant="28" id="MFi-52-2G6"/>
-                                                <constraint firstItem="idK-04-Q08" firstAttribute="centerY" secondItem="Xpk-XM-jvJ" secondAttribute="centerY" id="NKl-5T-RKA"/>
+                                                <constraint firstItem="aJk-Do-YXF" firstAttribute="top" secondItem="Kis-eq-uJu" secondAttribute="top" constant="20" id="Dwh-by-1A7"/>
+                                                <constraint firstAttribute="trailing" secondItem="H50-bN-gdO" secondAttribute="trailing" constant="20" id="MFi-52-2G6"/>
                                                 <constraint firstItem="H50-bN-gdO" firstAttribute="top" relation="greaterThanOrEqual" secondItem="aJk-Do-YXF" secondAttribute="bottom" constant="28" id="TL3-TY-wUN"/>
-                                                <constraint firstAttribute="trailing" secondItem="aJk-Do-YXF" secondAttribute="trailing" constant="48" id="WU9-Ig-XwH"/>
-                                                <constraint firstItem="idK-04-Q08" firstAttribute="leading" secondItem="Xpk-XM-jvJ" secondAttribute="leading" constant="28" id="i7r-41-qiQ"/>
+                                                <constraint firstAttribute="trailing" secondItem="aJk-Do-YXF" secondAttribute="trailing" constant="40" id="WU9-Ig-XwH"/>
                                                 <constraint firstAttribute="bottom" secondItem="H50-bN-gdO" secondAttribute="bottom" constant="20" id="x0R-8I-tGz"/>
                                             </constraints>
                                         </collectionViewCellContentView>
@@ -234,7 +233,7 @@
                                                 <label opaque="NO" userInteractionEnabled="NO" tag="5" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="characterWrap" numberOfLines="0" baselineAdjustment="none" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="43S-nh-DND">
                                                     <rect key="frame" x="20" y="20" width="374" height="24"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>

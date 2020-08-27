@@ -112,10 +112,10 @@ extension ViewControllerShowWord: UICollectionViewDelegateFlowLayout, UICollecti
     //Itemのレイアウト
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let width: CGFloat = UIScreen.main.bounds.width
-        var height: CGFloat = UIScreen.main.bounds.height / 7
+        var height: CGFloat = 128
         //説明cellは大きめに設定
         if(indexPath.row == 1){
-            height *= 6
+            height *= UIScreen.main.bounds.height - 128
         }
         return CGSize(width: width, height: height)
     }
@@ -134,8 +134,12 @@ extension ViewControllerShowWord: UICollectionViewDelegateFlowLayout, UICollecti
         if(indexPath.row == 0){
             item = collectionView.dequeueReusableCell(withReuseIdentifier: "wordCell", for: indexPath)
             //テキストセット
-            let Text = item.viewWithTag(1) as! UILabel
-            Text.text = WordInfo.word
+            let label = item.viewWithTag(1) as! UILabel
+            label.text = WordInfo.word
+            //UILavelの大きさ調整
+            label.frame.size.height = label.frame.size.height
+            label.frame.size.width = UIScreen.main.bounds.width - 130
+            label.frame.origin = CGPoint(x: 20, y:item.center.y - (label.frame.size.height/2))
             //お気に入りボタン
             let favoriteButton = item.viewWithTag(2) as! HeartButton
             //favoriteFlagに応じてボタン変更
@@ -144,6 +148,7 @@ extension ViewControllerShowWord: UICollectionViewDelegateFlowLayout, UICollecti
             }
             else if(WordInfo.favoriteFlag == 0){
                 favoriteButton.setOn(false, animated: false)
+                favoriteButton.backgroundColor = UIColor.white
             }
             //非表示ボタン
             let hideButton = item.viewWithTag(3) as! UIButton
@@ -161,13 +166,19 @@ extension ViewControllerShowWord: UICollectionViewDelegateFlowLayout, UICollecti
         else if (indexPath.row == 1){
             item = collectionView.dequeueReusableCell(withReuseIdentifier: "explanationCell", for: indexPath)
             let lavel = item.viewWithTag(5) as! UILabel
-            lavel.text = WordInfo.explanation
+            // "。"ごとに区切って、改行用の「\n」を追加し、labelに設定
+            var lineBreakWord = WordInfo.explanation.components(separatedBy: "。")
+            lineBreakWord.removeLast()
+            var explanation:String = ""
+            for word in lineBreakWord {
+                explanation += word + "。\n"
+            }
+            lavel.text = explanation
             //UILavelの大きさ調整
-            var fixedFrame = lavel.frame
+            lavel.frame.size.height = lavel.frame.size.height
+            lavel.frame.size.width = UIScreen.main.bounds.width - 40
             lavel.sizeToFit()
-            fixedFrame.size.width = UIScreen.main.bounds.width - 40
-            fixedFrame.size.height = lavel.frame.size.height
-            lavel.frame = CGRect(x:20, y:10, width: fixedFrame.size.width, height: fixedFrame.size.height)
+            lavel.frame.origin = CGPoint(x: 20, y:10)
             //hideFlagに応じてボタンテキスト変更
             if(appInfo[0].hideFlag == 1){
                 lavel.isHidden = true

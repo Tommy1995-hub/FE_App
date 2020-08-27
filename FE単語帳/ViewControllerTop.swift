@@ -25,7 +25,7 @@ class ViewControllerTop: UIViewController {
         // RealmからWord情報取得
         let realm = try! Realm(configuration:config)
         let wordInfo = realm.objects(Word.self)
-        
+        //開発中DB操作用
         /*try! realm.write {
           realm.deleteAll()
         }*/
