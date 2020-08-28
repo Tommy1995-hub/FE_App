@@ -144,6 +144,8 @@ extension ViewControllerShowWord: UICollectionViewDelegateFlowLayout, UICollecti
             let favoriteButton = item.viewWithTag(2) as! HeartButton
             //favoriteFlagに応じてボタン変更
             if(WordInfo.favoriteFlag == 1){
+                favoriteButton.setOn(false, animated: false)
+                favoriteButton.backgroundColor = UIColor.white
                 favoriteButton.setOn(true, animated: false)
             }
             else if(WordInfo.favoriteFlag == 0){

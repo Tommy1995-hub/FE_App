@@ -45,6 +45,14 @@ class ViewControllerTop: UIViewController {
             }
         }
     }
+    
+    //Infoボタン押下
+    @IBAction func pressInfoButton(_ sender: Any) {
+        let storyboard = self.storyboard!
+        let next = storyboard.instantiateViewController(withIdentifier: "ViewControllerShowAppExplanation") as! ViewControllerShowAppExplanation
+        next.modalPresentationStyle = .fullScreen
+        self.present(next, animated: true)
+    }
 }
 
 //UITableViewDataSource,UITableViewDelegateの適用

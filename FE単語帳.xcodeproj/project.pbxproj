@@ -18,6 +18,7 @@
 		DB4D71C524C56F9600333C98 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DB4D71C324C56F9600333C98 /* LaunchScreen.storyboard */; };
 		DB4D71D024C56F9600333C98 /* FE___Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB4D71CF24C56F9600333C98 /* FE___Tests.swift */; };
 		DB4D71DB24C56F9600333C98 /* FE___UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB4D71DA24C56F9600333C98 /* FE___UITests.swift */; };
+		DB524FD024F79EA800BFD4BD /* ViewControllerShowAppExplanation.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB524FCF24F79EA800BFD4BD /* ViewControllerShowAppExplanation.swift */; };
 		DB61286224C5933E00B86CAF /* ViewControllerSelectGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB61286124C5933E00B86CAF /* ViewControllerSelectGroup.swift */; };
 		DB6EE0EE24C9B3B40029A499 /* wordList.csv in Resources */ = {isa = PBXBuildFile; fileRef = DB6EE0ED24C9B3B40029A499 /* wordList.csv */; };
 		DB6EE0F024C9B8970029A499 /* Word.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB6EE0EF24C9B8970029A499 /* Word.swift */; };
@@ -68,6 +69,7 @@
 		DB4D71D624C56F9600333C98 /* FE単語帳UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "FE単語帳UITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DB4D71DA24C56F9600333C98 /* FE___UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FE___UITests.swift"; sourceTree = "<group>"; };
 		DB4D71DC24C56F9600333C98 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DB524FCF24F79EA800BFD4BD /* ViewControllerShowAppExplanation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerShowAppExplanation.swift; sourceTree = "<group>"; };
 		DB552D4524D8024000A14630 /* FE単語帳.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "FE単語帳.entitlements"; sourceTree = "<group>"; };
 		DB61286124C5933E00B86CAF /* ViewControllerSelectGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerSelectGroup.swift; sourceTree = "<group>"; };
 		DB6EE0ED24C9B3B40029A499 /* wordList.csv */ = {isa = PBXFileReference; lastKnownFileType = text; path = wordList.csv; sourceTree = "<group>"; };
@@ -154,6 +156,7 @@
 			children = (
 				DB4D71B824C56F9500333C98 /* AppDelegate.swift */,
 				DB4D71BA24C56F9500333C98 /* SceneDelegate.swift */,
+				DB524FCF24F79EA800BFD4BD /* ViewControllerShowAppExplanation.swift */,
 				DB4D71BC24C56F9500333C98 /* ViewControllerTop.swift */,
 				DB61286124C5933E00B86CAF /* ViewControllerSelectGroup.swift */,
 				DBA0A4AF24CA186E00D42F6E /* ViewControllerSelectWord.swift */,
@@ -438,6 +441,7 @@
 				DBA0A4B024CA186E00D42F6E /* ViewControllerSelectWord.swift in Sources */,
 				DB4D71BB24C56F9500333C98 /* SceneDelegate.swift in Sources */,
 				DBA0A4AC24C9E4B100D42F6E /* AppInfo.swift in Sources */,
+				DB524FD024F79EA800BFD4BD /* ViewControllerShowAppExplanation.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
