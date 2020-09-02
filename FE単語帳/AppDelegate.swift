@@ -8,7 +8,6 @@
 
 import UIKit
 import Firebase
-import FirebaseDynamicLinks
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -32,18 +31,5 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the user discards a scene session.
         // If any sessions were discarded while the application was not running, this will be called shortly after application:didFinishLaunchingWithOptions.
         // Use this method to release any resources that were specific to the discarded scenes, as they will not return.
-    }
-    
-    //ディープリンク用URL取得
-    private func application(_ application: UIApplication,
-                     continue userActivity: NSUserActivity,
-                     restorationHandler: @escaping ([Any]?) -> Void) -> Bool {
-        guard userActivity.activityType == NSUserActivityTypeBrowsingWeb,
-            let webpageURL = userActivity.webpageURL else { return false }
-        return DynamicLinks.dynamicLinks().handleUniversalLink(webpageURL) { dynamiclink, error in
-            guard let url = dynamiclink!.url else { return }
-            // ディープリンク URLを使用する処理...
-            print("url:", url)
-        }
     }
 }

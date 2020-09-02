@@ -38,12 +38,13 @@ class Word: Object {
             return
         }
         //Realmオブジェクト生成
-        let config = Realm.Configuration(schemaVersion: 2)
+        let config = Realm.Configuration(schemaVersion: 3)
         let realm = try! Realm(configuration:config)
-        //csvStrArrayごとにRealmに保存
+        //csvStrArrayの要素ごとにRealmに保存
         for wordInfo in csvStrArray {
             // ","ごとに区切って、変数wordMemberに格納
             let wordMember = wordInfo.components(separatedBy: ",")
+            //追加するWordオブジェクト作成
             let addWord = Word()
             addWord.word = wordMember[0]
             addWord.furigana = wordMember[1]

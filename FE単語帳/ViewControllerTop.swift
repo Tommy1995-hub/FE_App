@@ -10,7 +10,6 @@ import Foundation
 import UIKit
 import RealmSwift
 import Firebase
-import FirebaseDynamicLinks
 
 class ViewControllerTop: UIViewController {
     @IBOutlet weak var topTableView: UITableView!
@@ -27,7 +26,7 @@ class ViewControllerTop: UIViewController {
         // RealmからWord情報取得
         let realm = try! Realm(configuration:config)
         let wordInfo = realm.objects(Word.self)
-        //開発中DB操作用
+        //DBリセット用
         /*try! realm.write {
           realm.deleteAll()
         }*/
@@ -35,16 +34,16 @@ class ViewControllerTop: UIViewController {
         if(wordInfo.isEmpty){
             //csvデータ登録
             Word().setCsvData()
-            //AppInfo情報を登録
-            let setAppInfo = AppInfo()
-            setAppInfo.hideFlag = 0
-            setAppInfo.inputWordNum = 0
-            //日付を算出し設定
+            //日付を算出
             let now = Date()
             let date = DateFormatter()
             date.dateStyle = .short
             date.timeStyle = .none
             date.locale = Locale(identifier: "ja_JP")
+            //AppInfo情報を登録
+            let setAppInfo = AppInfo()
+            setAppInfo.hideFlag = 0
+            setAppInfo.inputWordNum = 0
             setAppInfo.lasttimeDate = date.string(from: now)
             do {
                 try realm.write {
@@ -83,7 +82,7 @@ extension ViewControllerTop: UITableViewDataSource,UITableViewDelegate{
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)//セルの選択を解除
         let storyboard = self.storyboard!
-        //選択されたcellごとに画面遷移
+        //タップされたcellごとに画面遷移
         //「単語を選択」を押下
         if(indexPath.row == 0){
             let next = storyboard.instantiateViewController(withIdentifier: "ViewControllerSelectGroup") as! ViewControllerSelectGroup
@@ -91,7 +90,7 @@ extension ViewControllerTop: UITableViewDataSource,UITableViewDelegate{
             self.present(next, animated: true)
         }
         //「分野から選択」を押下
-        if(indexPath.row == 1){
+        else if(indexPath.row == 1){
             let next = storyboard.instantiateViewController(withIdentifier: "ViewControllerSelectGroup") as! ViewControllerSelectGroup
             next.modalPresentationStyle = .fullScreen
             next.previousScreenInfo = 1
@@ -116,10 +115,10 @@ extension ViewControllerTop: UITableViewDataSource,UITableViewDelegate{
         }
         //「Twitterでつぶやく」を押下
         else if(indexPath.row == 4){
-            // Realmから該当情報取得
+            // RealmからAppInfo取得
             let realm = try! Realm(configuration:config)
             let appInfo = realm.objects(AppInfo.self)
-            //日付の変更があったかを判定
+            //現在の日付を取得
             let now = Date()
             let date = DateFormatter()
             date.dateStyle = .short

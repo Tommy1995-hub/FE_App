@@ -25,7 +25,7 @@ class ViewControllerShowWord: UIViewController {
         showWordCollection.dataSource = self
         showWordCollection.isScrollEnabled = false
         view.addSubview(showWordCollection)
-        // 「ランダムに表示」から遷移した場合のみ「次へ」ボタン表示
+        // 「ランダムに表示」からの遷移でなければ「次へ」ボタン無効化
         if(pressedRandom != 1){
             nextButton.isEnabled = false
             nextButton.tintColor = UIColor.clear
@@ -136,7 +136,7 @@ extension ViewControllerShowWord: UICollectionViewDelegateFlowLayout, UICollecti
             //テキストセット
             let label = item.viewWithTag(1) as! UILabel
             label.text = WordInfo.word
-            //UILavelの大きさ調整
+            //UILabelの大きさ調整
             label.frame.size.height = label.frame.size.height
             label.frame.size.width = UIScreen.main.bounds.width - 130
             label.frame.origin = CGPoint(x: 20, y:item.center.y - (label.frame.size.height/2))
@@ -148,7 +148,7 @@ extension ViewControllerShowWord: UICollectionViewDelegateFlowLayout, UICollecti
                 favoriteButton.backgroundColor = UIColor.white
                 favoriteButton.setOn(true, animated: false)
             }
-            else if(WordInfo.favoriteFlag == 0){
+            else{
                 favoriteButton.setOn(false, animated: false)
                 favoriteButton.backgroundColor = UIColor.white
             }
@@ -161,7 +161,7 @@ extension ViewControllerShowWord: UICollectionViewDelegateFlowLayout, UICollecti
             if(appInfo[0].hideFlag == 1){
                 hideButton.setTitle("表示", for: .normal)
             }
-            else if(appInfo[0].hideFlag == 0){
+            else{
                 hideButton.setTitle("非表示", for: .normal)
             }
             //日付の変更があったかを判定
@@ -187,7 +187,8 @@ extension ViewControllerShowWord: UICollectionViewDelegateFlowLayout, UICollecti
         }
         else if (indexPath.row == 1){
             item = collectionView.dequeueReusableCell(withReuseIdentifier: "explanationCell", for: indexPath)
-            let lavel = item.viewWithTag(5) as! UILabel
+            let label = item.viewWithTag(5) as! UILabel
+            //テキストセット
             // "。"ごとに区切って、改行用の「\n」を追加し、labelに設定
             var lineBreakWord = WordInfo.explanation.components(separatedBy: "。")
             lineBreakWord.removeLast()
@@ -195,18 +196,18 @@ extension ViewControllerShowWord: UICollectionViewDelegateFlowLayout, UICollecti
             for word in lineBreakWord {
                 explanation += word + "。\n"
             }
-            lavel.text = explanation
-            //UILavelの大きさ調整
-            lavel.frame.size.height = lavel.frame.size.height
-            lavel.frame.size.width = UIScreen.main.bounds.width - 40
-            lavel.sizeToFit()
-            lavel.frame.origin = CGPoint(x: 20, y:10)
+            label.text = explanation
+            //UILabelの大きさ調整
+            label.frame.size.height = label.frame.size.height
+            label.frame.size.width = UIScreen.main.bounds.width - 40
+            label.sizeToFit()
+            label.frame.origin = CGPoint(x: 20, y:10)
             //hideFlagに応じてボタンテキスト変更
             if(appInfo[0].hideFlag == 1){
-                lavel.isHidden = true
+                label.isHidden = true
             }
             else if(appInfo[0].hideFlag == 0){
-                lavel.isHidden = false
+                label.isHidden = false
             }
         }
         return item

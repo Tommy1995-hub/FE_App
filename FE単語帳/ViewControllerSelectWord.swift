@@ -77,9 +77,8 @@ extension ViewControllerSelectWord: UITableViewDataSource,UITableViewDelegate{
     }
     //cellの作成
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        //storyboardからTableViewCell取得
         let cell = tableView.dequeueReusableCell(withIdentifier: "selectWordTableCell", for: indexPath as IndexPath)
-        //TableViewCellのLavel作成
+        //TableViewCellのLabel作成
         let setText: String = selectWordShowBox[indexPath.row].word
         cell.textLabel?.text = setText
                 

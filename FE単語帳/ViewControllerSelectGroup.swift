@@ -47,14 +47,18 @@ class ViewControllerSelectGroup: UIViewController {
         self.dismiss(animated: true, completion: nil)
     }
 }
-    
+
 //UITableViewDataSource,UITableViewDelegateの適用
 extension ViewControllerSelectGroup: UITableViewDataSource,UITableViewDelegate{
     //sectionの数
     func numberOfSections(in tableView: UITableView) -> Int {
         return selectGroupShowBox.count
     }
-    //cellの数
+    //sectionのヘッダー作成
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return sectionShowBox[section]
+    }
+    //section内のcellの数
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return selectGroupShowBox[section].count
     }
@@ -62,15 +66,11 @@ extension ViewControllerSelectGroup: UITableViewDataSource,UITableViewDelegate{
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         //storyboardからTableViewCell取得
         let cell = tableView.dequeueReusableCell(withIdentifier: "selectGroupTableCell", for: indexPath as IndexPath)
-        //TableViewCellのLavel作成
+        //TableViewCellのLabel作成
         let setText: String = selectGroupShowBox[indexPath.section][indexPath.row]
         cell.textLabel?.text = setText
-                
+        
         return cell
-    }
-    //sectionのヘッダー作成
-    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return sectionShowBox[section]
     }
     //cellタップ時処理
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
