@@ -3,4 +3,23 @@
    uuid = "35D1B012-FB37-46B5-A3C4-42726DA975DB"
    type = "0"
    version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "04B814A1-BBC6-43AB-A2D5-2ED916A5F172"
+            shouldBeEnabled = "Yes"
+            nameForDebugger = "s"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Pods/GoogleUtilities/GoogleUtilities/AppDelegateSwizzler/GULAppDelegateSwizzler.m"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "715"
+            endingLineNumber = "715"
+            landmarkName = "-application:openURL:options:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
 </Bucket>

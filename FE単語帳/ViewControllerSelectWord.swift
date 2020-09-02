@@ -12,7 +12,7 @@ import RealmSwift
 
 class ViewControllerSelectWord: UIViewController {
     @IBOutlet weak var selectWordTable: UITableView!
-    let config = Realm.Configuration(schemaVersion: 2)
+    let config = Realm.Configuration(schemaVersion: 3)
     var selectWordShowBox: [Word] = []
     var receiveGroupInfo:Int = 99
     //前画面情報 0:単語を選択 1:分野から選択 2:お気に入りを表示

@@ -9,11 +9,13 @@
 import Foundation
 import UIKit
 import RealmSwift
+import Firebase
+import FirebaseDynamicLinks
 
 class ViewControllerTop: UIViewController {
     @IBOutlet weak var topTableView: UITableView!
     var topShowBox: [String] = ["単語を選択","分野から選択","お気に入りを表示","ランダムに表示","Twitterでつぶやく"]
-    let config = Realm.Configuration(schemaVersion: 2)
+    let config = Realm.Configuration(schemaVersion: 3)
     //初期メソッド
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,6 +39,13 @@ class ViewControllerTop: UIViewController {
             let setAppInfo = AppInfo()
             setAppInfo.hideFlag = 0
             setAppInfo.inputWordNum = 0
+            //日付を算出し設定
+            let now = Date()
+            let date = DateFormatter()
+            date.dateStyle = .short
+            date.timeStyle = .none
+            date.locale = Locale(identifier: "ja_JP")
+            setAppInfo.lasttimeDate = date.string(from: now)
             do {
                 try realm.write {
                     realm.add(setAppInfo)
@@ -107,12 +116,31 @@ extension ViewControllerTop: UITableViewDataSource,UITableViewDelegate{
         }
         //「Twitterでつぶやく」を押下
         else if(indexPath.row == 4){
-            /*let text = "本日のインプット単語数："
+            // Realmから該当情報取得
+            let realm = try! Realm(configuration:config)
+            let appInfo = realm.objects(AppInfo.self)
+            //日付の変更があったかを判定
+            let now = Date()
+            let date = DateFormatter()
+            date.dateStyle = .short
+            date.timeStyle = .none
+            date.locale = Locale(identifier: "ja_JP")
+            //日付の変更あり
+            if(appInfo[0].lasttimeDate != date.string(from: now)){
+                try! realm.write {
+                    //日付更新
+                    appInfo[0].lasttimeDate = date.string(from: now)
+                    //インプット単語数を初期化
+                    appInfo[0].inputWordNum = 0
+                }
+            }
+            //Tweet
+            let text = "本日のインプット単語数：\(appInfo[0].inputWordNum)\nスキマ時間を有効活用！効率的に学習して単語を覚えよう！\n＃基本情報技術者単語帳\n\nhttps://apps.apple.com/us/app/id1529835420"
             let encodedText = text.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)
             if let encodedText = encodedText,
                 let url = URL(string: "https://twitter.com/intent/tweet?text=\(encodedText)") {
                 UIApplication.shared.open(url, options: [:], completionHandler: nil)
-            }*/
+            }
         }
         else{
             //処理なし

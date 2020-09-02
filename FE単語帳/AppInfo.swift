@@ -14,4 +14,5 @@ class AppInfo: Object {
     //メンバ変数
     @objc dynamic var hideFlag:Int = 0
     @objc dynamic var inputWordNum:Int = 0
+    @objc dynamic var lasttimeDate:String = ""
 }

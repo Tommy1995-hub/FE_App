@@ -14,7 +14,7 @@ import HeartButton
 class ViewControllerShowWord: UIViewController {
     @IBOutlet weak var showWordCollection: UICollectionView!
     @IBOutlet weak var nextButton: UIBarButtonItem!
-    let config = Realm.Configuration(schemaVersion: 2)
+    let config = Realm.Configuration(schemaVersion: 3)
     var WordInfo:Word = Word()
     var pressedRandom:Int = 0
     //初期メソッド
@@ -163,6 +163,26 @@ extension ViewControllerShowWord: UICollectionViewDelegateFlowLayout, UICollecti
             }
             else if(appInfo[0].hideFlag == 0){
                 hideButton.setTitle("非表示", for: .normal)
+            }
+            //日付の変更があったかを判定
+            let now = Date()
+            let date = DateFormatter()
+            date.dateStyle = .short
+            date.timeStyle = .none
+            date.locale = Locale(identifier: "ja_JP")
+            //日付の変更あり
+            if(appInfo[0].lasttimeDate != date.string(from: now)){
+                try! realm.write {
+                    //日付更新
+                    appInfo[0].lasttimeDate = date.string(from: now)
+                    //インプット単語数を初期化
+                    appInfo[0].inputWordNum = 0
+                }
+            }
+            //インプット単語数更新
+            let incInputWord = appInfo[0].inputWordNum + 1
+            try! realm.write {
+                appInfo[0].inputWordNum = incInputWord
             }
         }
         else if (indexPath.row == 1){

@@ -166,9 +166,9 @@
 				DB4D71BE24C56F9500333C98 /* Main.storyboard */,
 				DB4D71C124C56F9600333C98 /* Assets.xcassets */,
 				DB4D71C324C56F9600333C98 /* LaunchScreen.storyboard */,
+				DBF13F3D24D7EF44004910F1 /* GoogleService-Info.plist */,
 				DB4D71C624C56F9600333C98 /* Info.plist */,
 				DB552D4524D8024000A14630 /* FE単語帳.entitlements */,
-				DBF13F3D24D7EF44004910F1 /* GoogleService-Info.plist */,
 				DB6EE0ED24C9B3B40029A499 /* wordList.csv */,
 			);
 			path = "FE単語帳";
