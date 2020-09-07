@@ -8,15 +8,12 @@
 
 import Foundation
 import UIKit
-import RealmSwift
 
 class ViewControllerSelectWord: UIViewController {
     @IBOutlet weak var selectWordTable: UITableView!
-    let config = Realm.Configuration(schemaVersion: 3)
     var selectWordShowBox: [Word] = []
-    var receiveGroupInfo:Int = 99
-    //前画面情報 0:単語を選択 1:分野から選択 2:お気に入りを表示
-    var previousScreenInfo:Int = 0
+    let accessWordModel:WordModel = WordModel()
+    let accessAppInfoModel:AppInfoModel = AppInfoModel()
     //初期メソッド
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,39 +22,27 @@ class ViewControllerSelectWord: UIViewController {
         selectWordTable.delegate = self
         view.addSubview(selectWordTable)
         // 「単語を選択」「分野から選択」から遷移した場合、DBから該当データ取得
-        if(previousScreenInfo != 2){
-            let realm = try! Realm(configuration:config)
+        if(preScreenInfo == 0){
             //「単語を選択」から遷移
-            if(previousScreenInfo == 0){
-                let wordInfo = realm.objects(Word.self).filter("group == \(receiveGroupInfo)").sorted(byKeyPath: "furigana", ascending: true)
-                //取得データをselectWordShowBoxに設定
-                for word in wordInfo {
-                    selectWordShowBox.append(word)
-                }
-            }
+            selectWordShowBox = accessWordModel.getWordByGroup(receiveGroupInfo)
+        }
+        else if(preScreenInfo == 1){
             //「分野から選択」から遷移
-            else{
-                let wordInfo = realm.objects(Word.self).filter("field == \(receiveGroupInfo)").sorted(byKeyPath: "furigana", ascending: true)
-                //取得データをselectWordShowBoxに設定
-                for word in wordInfo {
-                    selectWordShowBox.append(word)
-                }
-            }
+            selectWordShowBox = accessWordModel.getWordByField(receiveGroupInfo)
+        }
+        else{
+            //処理なし
         }
     }
     
     //View表示前処理
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        // 「お気に入りを表示」から遷移した場合、DBから該当データ取得
-        if(previousScreenInfo == 2){
+        // 「お気に入りを表示」から遷移した場合
+        if(preScreenInfo == 2){
+            //お気に入り単語取得
             selectWordShowBox = []
-            let realm = try! Realm(configuration:config)
-            let wordInfo = realm.objects(Word.self).filter("favoriteFlag == 1").sorted(byKeyPath: "furigana", ascending: true)
-            //取得データをselectWordShowBoxに設定
-            for word in wordInfo {
-                selectWordShowBox.append(word)
-            }
+            selectWordShowBox = accessWordModel.getWordByFavorite()
             //View再表示
             selectWordTable.reloadData()
         }

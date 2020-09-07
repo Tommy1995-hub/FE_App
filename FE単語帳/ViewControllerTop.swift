@@ -8,13 +8,12 @@
 
 import Foundation
 import UIKit
-import RealmSwift
-import Firebase
 
 class ViewControllerTop: UIViewController {
     @IBOutlet weak var topTableView: UITableView!
     var topShowBox: [String] = ["単語を選択","分野から選択","お気に入りを表示","ランダムに表示","Twitterでつぶやく"]
-    let config = Realm.Configuration(schemaVersion: 3)
+    let accessWordModel:WordModel = WordModel()
+    let accessAppInfoModel:AppInfoModel = AppInfoModel()
     //初期メソッド
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,35 +22,9 @@ class ViewControllerTop: UIViewController {
         topTableView.delegate = self
         topTableView.isScrollEnabled = false
         view.addSubview(topTableView)
-        // RealmからWord情報取得
-        let realm = try! Realm(configuration:config)
-        let wordInfo = realm.objects(Word.self)
-        //DBリセット用
-        /*try! realm.write {
-          realm.deleteAll()
-        }*/
-        //初回DBプリセット処理
-        if(wordInfo.isEmpty){
-            //csvデータ登録
-            Word().setCsvData()
-            //日付を算出
-            let now = Date()
-            let date = DateFormatter()
-            date.dateStyle = .short
-            date.timeStyle = .none
-            date.locale = Locale(identifier: "ja_JP")
-            //AppInfo情報を登録
-            let setAppInfo = AppInfo()
-            setAppInfo.hideFlag = 0
-            setAppInfo.inputWordNum = 0
-            setAppInfo.lasttimeDate = date.string(from: now)
-            do {
-                try realm.write {
-                    realm.add(setAppInfo)
-                }
-            } catch {
-            }
-        }
+        //DBプリセット
+        accessWordModel.presetDB()
+        accessAppInfoModel.presetDB()
     }
     
     //Infoボタン押下
@@ -87,59 +60,37 @@ extension ViewControllerTop: UITableViewDataSource,UITableViewDelegate{
         if(indexPath.row == 0){
             let next = storyboard.instantiateViewController(withIdentifier: "ViewControllerSelectGroup") as! ViewControllerSelectGroup
             next.modalPresentationStyle = .fullScreen
+            preScreenInfo = 0
             self.present(next, animated: true)
         }
         //「分野から選択」を押下
         else if(indexPath.row == 1){
             let next = storyboard.instantiateViewController(withIdentifier: "ViewControllerSelectGroup") as! ViewControllerSelectGroup
             next.modalPresentationStyle = .fullScreen
-            next.previousScreenInfo = 1
+            preScreenInfo = 1
             self.present(next, animated: true)
         }
         //「お気に入りを表示」を押下
         else if(indexPath.row == 2){
             let next = storyboard.instantiateViewController(withIdentifier: "ViewControllerSelectWord") as! ViewControllerSelectWord
             next.modalPresentationStyle = .fullScreen
-            next.previousScreenInfo = 2
+            preScreenInfo = 2
             self.present(next, animated: true)
         }
         //「ランダムに表示」を押下
         else if(indexPath.row == 3){
             let next = storyboard.instantiateViewController(withIdentifier: "ViewControllerShowWord") as! ViewControllerShowWord
             next.modalPresentationStyle = .fullScreen
-            let realm = try! Realm(configuration:config)
-            let wordInfo = realm.objects(Word.self)
-            next.WordInfo = wordInfo.randomElement()!
-            next.pressedRandom = 1
+            next.WordInfo = accessWordModel.getRandomWord()
+            preScreenInfo = 3
             self.present(next, animated: true)
         }
         //「Twitterでつぶやく」を押下
         else if(indexPath.row == 4){
-            // RealmからAppInfo取得
-            let realm = try! Realm(configuration:config)
-            let appInfo = realm.objects(AppInfo.self)
-            //現在の日付を取得
-            let now = Date()
-            let date = DateFormatter()
-            date.dateStyle = .short
-            date.timeStyle = .none
-            date.locale = Locale(identifier: "ja_JP")
-            //日付の変更あり
-            if(appInfo[0].lasttimeDate != date.string(from: now)){
-                try! realm.write {
-                    //日付更新
-                    appInfo[0].lasttimeDate = date.string(from: now)
-                    //インプット単語数を初期化
-                    appInfo[0].inputWordNum = 0
-                }
-            }
+            //日付更新確認＆日付更新
+            accessAppInfoModel.dateCheck()
             //Tweet
-            let text = "本日のインプット単語数：\(appInfo[0].inputWordNum)\nスキマ時間を有効活用！効率的に学習して単語を覚えよう！\n＃基本情報技術者単語帳\n\nhttps://apps.apple.com/us/app/id1529835420"
-            let encodedText = text.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)
-            if let encodedText = encodedText,
-                let url = URL(string: "https://twitter.com/intent/tweet?text=\(encodedText)") {
-                UIApplication.shared.open(url, options: [:], completionHandler: nil)
-            }
+            accessAppInfoModel.tweet()
         }
         else{
             //処理なし

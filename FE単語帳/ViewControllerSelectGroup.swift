@@ -20,8 +20,6 @@ class ViewControllerSelectGroup: UIViewController {
     [["基礎理論","アルゴリズムとプログラミング","コンピュータ構成要素","システム構成要素","ソフトウェア","ハードウェア","ヒューマンインターフェース","マルチメディア","データベース","ネットワーク","セキュリティ","システム開発技術","ソフトウェア開発管理技術"],["プロジェクトマネジメント","サービスマネジメント","システム監査"],["システム戦略","システム企画","経営戦略マネジメント","技術戦略マネジメント","ビジネスインダストリ","企業活動","法務"]
     ]
     var fieldSectionBox = ["テクノロジ系","マネジメント系","ストラテジ系"]
-    //前画面情報 0:単語を選択 1:分野から選択
-    var previousScreenInfo:Int = 0
     
     //初期メソッド
     override func viewDidLoad() {
@@ -31,14 +29,17 @@ class ViewControllerSelectGroup: UIViewController {
         selectGroupTable.delegate = self
         view.addSubview(selectGroupTable)
         //「分野から選択」が押された
-        if(previousScreenInfo == 1){
+        if(preScreenInfo == 1){
             selectGroupShowBox = fieldBox
             sectionShowBox = fieldSectionBox
         }
         //「単語を選択」が押された
-        else{
+        else if(preScreenInfo == 0){
             selectGroupShowBox = groupBox
             sectionShowBox = groupSectionBox
+        }
+        else{
+            //処理なし
         }
     }
     
@@ -75,44 +76,40 @@ extension ViewControllerSelectGroup: UITableViewDataSource,UITableViewDelegate{
     //cellタップ時処理
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)// セルの選択を解除
-        var nextReceiveGroupInfo = 0
-        //次画面へ渡す値作成
         //「分野から選択」
-        if(previousScreenInfo == 1){
+        if(preScreenInfo == 1){
             //テクノロジ系
             if(indexPath.section == 0){
-                nextReceiveGroupInfo = indexPath.row
+                receiveGroupInfo = indexPath.row
             }
             //マネジメント系
             else if(indexPath.section == 1){
-                nextReceiveGroupInfo = indexPath.row + 13
+                receiveGroupInfo = indexPath.row + 13
             }
             //ストラテジ系
             else if(indexPath.section == 2){
-                nextReceiveGroupInfo = indexPath.row + 16
+                receiveGroupInfo = indexPath.row + 16
             }
         }
         //「単語を選択」
         else{
             //数字/記号
             if(indexPath.section == 0){
-                nextReceiveGroupInfo = indexPath.row
+                receiveGroupInfo = indexPath.row
             }
             //アルファベット
             else if(indexPath.section == 1){
-                nextReceiveGroupInfo = indexPath.row + 1
+                receiveGroupInfo = indexPath.row + 1
             }
             //かな
             else if(indexPath.section == 2){
-                nextReceiveGroupInfo = indexPath.row + 6
+                receiveGroupInfo = indexPath.row + 6
             }
         }
         //選択されたcellのグループ情報を渡す&画面遷移
         let storyboard = self.storyboard!
         let next = storyboard.instantiateViewController(withIdentifier: "ViewControllerSelectWord") as! ViewControllerSelectWord
         next.modalPresentationStyle = .fullScreen
-        next.receiveGroupInfo = nextReceiveGroupInfo
-        next.previousScreenInfo = previousScreenInfo
         self.present(next, animated: true)
     }
 }

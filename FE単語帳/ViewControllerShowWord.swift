@@ -8,15 +8,14 @@
 
 import Foundation
 import UIKit
-import RealmSwift
 import HeartButton
 
 class ViewControllerShowWord: UIViewController {
     @IBOutlet weak var showWordCollection: UICollectionView!
     @IBOutlet weak var nextButton: UIBarButtonItem!
-    let config = Realm.Configuration(schemaVersion: 3)
     var WordInfo:Word = Word()
-    var pressedRandom:Int = 0
+    let accessWordModel:WordModel = WordModel()
+    let accessAppInfoModel:AppInfoModel = AppInfoModel()
     //初期メソッド
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,7 +25,7 @@ class ViewControllerShowWord: UIViewController {
         showWordCollection.isScrollEnabled = false
         view.addSubview(showWordCollection)
         // 「ランダムに表示」からの遷移でなければ「次へ」ボタン無効化
-        if(pressedRandom != 1){
+        if(preScreenInfo != 3){
             nextButton.isEnabled = false
             nextButton.tintColor = UIColor.clear
         }
@@ -40,19 +39,13 @@ class ViewControllerShowWord: UIViewController {
         let favoriteButton = wordCell.viewWithTag(2) as! HeartButton
         //お気に入りボタン押下
         favoriteButton.stateChanged = { sender, isOn in
-            // Realmから該当情報取得
-            let realm = try! Realm(configuration:self.config)
             //DB更新(フラグオン)
             if isOn {
-                try! realm.write {
-                    self.WordInfo.favoriteFlag = 1
-                }
+                self.accessWordModel.isOnFavoriteFlag(self.WordInfo)
             }
             //DB更新(フラグオフ)
             else {
-              try! realm.write {
-                  self.WordInfo.favoriteFlag = 0
-              }
+                self.accessWordModel.isOffFavoriteFlag(self.WordInfo)
             }
         }
     }
@@ -64,39 +57,32 @@ class ViewControllerShowWord: UIViewController {
         let hideButton = wordCell.viewWithTag(3) as! UIButton
         let explanationCell = showWordCollection.viewWithTag(4) as! UICollectionViewCell
         let Text = explanationCell.viewWithTag(5) as! UILabel
-        // Realmから該当情報取得
-        let realm = try! Realm(configuration:config)
-        let appInfo = realm.objects(AppInfo.self)
+        //hideFlag取得
+        let hideFlag = accessAppInfoModel.getHideFlag()
         //hideFlag=1の時
-        if(appInfo[0].hideFlag == 1){
+        if(hideFlag == 1){
             //説明文表示
             Text.isHidden = false
             //ボタン文字を「非表示」に変更
             hideButton.setTitle("非表示", for: .normal)
             //DB更新
-            try! realm.write {
-                appInfo[0].hideFlag = 0
-            }
+            accessAppInfoModel.setHideFlag(0)
         }
         //hideFlag=0の時
-        else if(appInfo[0].hideFlag == 0){
+        else if(hideFlag == 0){
             //説明文非表示
             Text.isHidden = true
             //ボタン文字を「表示」に変更
             hideButton.setTitle("表示", for: .normal)
             //DB更新
-            try! realm.write {
-                appInfo[0].hideFlag = 1
-            }
+            accessAppInfoModel.setHideFlag(1)
         }
     }
     
     //次へボタン押下
     @IBAction func pressNext(_ sender: Any) {
-        // RealmからWord情報取得
-        let realm = try! Realm(configuration:config)
-        let wordInfo = realm.objects(Word.self)
-        WordInfo = wordInfo.randomElement()!
+        //ランダムに単語情報取得
+        WordInfo = accessWordModel.getRandomWord()
         //View再表示
         showWordCollection.reloadData()
     }
@@ -127,9 +113,6 @@ extension ViewControllerShowWord: UICollectionViewDelegateFlowLayout, UICollecti
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         //Item定義
         var item:UICollectionViewCell = UICollectionViewCell()
-        // Realmから該当情報取得
-        let realm = try! Realm(configuration:config)
-        let appInfo = realm.objects(AppInfo.self)
         //Itemに応じて表示させる内容を変更
         if(indexPath.row == 0){
             item = collectionView.dequeueReusableCell(withReuseIdentifier: "wordCell", for: indexPath)
@@ -158,32 +141,16 @@ extension ViewControllerShowWord: UICollectionViewDelegateFlowLayout, UICollecti
             hideButton.layer.borderColor = UIColor.black.cgColor
             hideButton.layer.cornerRadius = 10
             //hideFlagに応じてボタンテキスト変更
-            if(appInfo[0].hideFlag == 1){
+            if(accessAppInfoModel.getHideFlag() == 1){
                 hideButton.setTitle("表示", for: .normal)
             }
             else{
                 hideButton.setTitle("非表示", for: .normal)
             }
-            //日付の変更があったかを判定
-            let now = Date()
-            let date = DateFormatter()
-            date.dateStyle = .short
-            date.timeStyle = .none
-            date.locale = Locale(identifier: "ja_JP")
-            //日付の変更あり
-            if(appInfo[0].lasttimeDate != date.string(from: now)){
-                try! realm.write {
-                    //日付更新
-                    appInfo[0].lasttimeDate = date.string(from: now)
-                    //インプット単語数を初期化
-                    appInfo[0].inputWordNum = 0
-                }
-            }
+            //日付更新確認＆日付更新
+            accessAppInfoModel.dateCheck()
             //インプット単語数更新
-            let incInputWord = appInfo[0].inputWordNum + 1
-            try! realm.write {
-                appInfo[0].inputWordNum = incInputWord
-            }
+            accessAppInfoModel.incInputWordNum()
         }
         else if (indexPath.row == 1){
             item = collectionView.dequeueReusableCell(withReuseIdentifier: "explanationCell", for: indexPath)
@@ -203,10 +170,10 @@ extension ViewControllerShowWord: UICollectionViewDelegateFlowLayout, UICollecti
             label.sizeToFit()
             label.frame.origin = CGPoint(x: 20, y:10)
             //hideFlagに応じてボタンテキスト変更
-            if(appInfo[0].hideFlag == 1){
+            if(accessAppInfoModel.getHideFlag() == 1){
                 label.isHidden = true
             }
-            else if(appInfo[0].hideFlag == 0){
+            else{
                 label.isHidden = false
             }
         }

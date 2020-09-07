@@ -24,6 +24,8 @@
 		DB6EE0F024C9B8970029A499 /* Word.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB6EE0EF24C9B8970029A499 /* Word.swift */; };
 		DBA0A4AC24C9E4B100D42F6E /* AppInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBA0A4AB24C9E4B100D42F6E /* AppInfo.swift */; };
 		DBA0A4B024CA186E00D42F6E /* ViewControllerSelectWord.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBA0A4AF24CA186E00D42F6E /* ViewControllerSelectWord.swift */; };
+		DBAA1BD125009F5100C891A2 /* WordModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBAA1BD025009F5100C891A2 /* WordModel.swift */; };
+		DBAA1BD325009F6600C891A2 /* AppInfoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBAA1BD225009F6600C891A2 /* AppInfoModel.swift */; };
 		DBF13F3E24D7EF44004910F1 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DBF13F3D24D7EF44004910F1 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
@@ -76,6 +78,8 @@
 		DB6EE0EF24C9B8970029A499 /* Word.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Word.swift; sourceTree = "<group>"; };
 		DBA0A4AB24C9E4B100D42F6E /* AppInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppInfo.swift; sourceTree = "<group>"; };
 		DBA0A4AF24CA186E00D42F6E /* ViewControllerSelectWord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerSelectWord.swift; sourceTree = "<group>"; };
+		DBAA1BD025009F5100C891A2 /* WordModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordModel.swift; sourceTree = "<group>"; };
+		DBAA1BD225009F6600C891A2 /* AppInfoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppInfoModel.swift; sourceTree = "<group>"; };
 		DBF13F3D24D7EF44004910F1 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -161,6 +165,8 @@
 				DB61286124C5933E00B86CAF /* ViewControllerSelectGroup.swift */,
 				DBA0A4AF24CA186E00D42F6E /* ViewControllerSelectWord.swift */,
 				DB39B4E924CC877800319E4D /* ViewControllerShowWord.swift */,
+				DBAA1BD025009F5100C891A2 /* WordModel.swift */,
+				DBAA1BD225009F6600C891A2 /* AppInfoModel.swift */,
 				DB6EE0EF24C9B8970029A499 /* Word.swift */,
 				DBA0A4AB24C9E4B100D42F6E /* AppInfo.swift */,
 				DB4D71BE24C56F9500333C98 /* Main.storyboard */,
@@ -442,6 +448,8 @@
 				DB4D71BB24C56F9500333C98 /* SceneDelegate.swift in Sources */,
 				DBA0A4AC24C9E4B100D42F6E /* AppInfo.swift in Sources */,
 				DB524FD024F79EA800BFD4BD /* ViewControllerShowAppExplanation.swift in Sources */,
+				DBAA1BD325009F6600C891A2 /* AppInfoModel.swift in Sources */,
+				DBAA1BD125009F5100C891A2 /* WordModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
