@@ -73,7 +73,7 @@ class AppInfoModel {
         let realm = try! Realm(configuration:config)
         let appInfo = realm.objects(AppInfo.self)
         //Tweet
-        let text = "本日のインプット単語数：\(appInfo[0].inputWordNum)\nスキマ時間を有効活用！効率的に学習して単語を覚えよう！\n＃基本情報技術者単語帳\nhttps://apps.apple.com/us/app/id1529835420"
+        let text = "本日のインプット単語数：\(appInfo[0].inputWordNum)\nスキマ時間を有効活用！効率的に学習して単語を覚えよう！\n＃基本情報技術者単語帳\nhttps://itunes.apple.com/jp/app/id1529835420?mt=8"
         let encodedText = text.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)
         if let encodedText = encodedText,
             let url = URL(string: "https://twitter.com/intent/tweet?text=\(encodedText)") {
