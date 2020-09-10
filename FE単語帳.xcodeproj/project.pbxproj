@@ -12,7 +12,6 @@
 		DB39B4EA24CC877800319E4D /* ViewControllerShowWord.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB39B4E924CC877800319E4D /* ViewControllerShowWord.swift */; };
 		DB4D71B924C56F9500333C98 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB4D71B824C56F9500333C98 /* AppDelegate.swift */; };
 		DB4D71BB24C56F9500333C98 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB4D71BA24C56F9500333C98 /* SceneDelegate.swift */; };
-		DB4D71BD24C56F9500333C98 /* ViewControllerTop.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB4D71BC24C56F9500333C98 /* ViewControllerTop.swift */; };
 		DB4D71C024C56F9500333C98 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DB4D71BE24C56F9500333C98 /* Main.storyboard */; };
 		DB4D71C224C56F9600333C98 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DB4D71C124C56F9600333C98 /* Assets.xcassets */; };
 		DB4D71C524C56F9600333C98 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DB4D71C324C56F9600333C98 /* LaunchScreen.storyboard */; };
@@ -22,10 +21,12 @@
 		DB61286224C5933E00B86CAF /* ViewControllerSelectGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB61286124C5933E00B86CAF /* ViewControllerSelectGroup.swift */; };
 		DB6EE0EE24C9B3B40029A499 /* wordList.csv in Resources */ = {isa = PBXBuildFile; fileRef = DB6EE0ED24C9B3B40029A499 /* wordList.csv */; };
 		DB6EE0F024C9B8970029A499 /* Word.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB6EE0EF24C9B8970029A499 /* Word.swift */; };
+		DB8B9DBA2509658900517F00 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB8B9DB92509658900517F00 /* TabBarController.swift */; };
 		DBA0A4AC24C9E4B100D42F6E /* AppInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBA0A4AB24C9E4B100D42F6E /* AppInfo.swift */; };
 		DBA0A4B024CA186E00D42F6E /* ViewControllerSelectWord.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBA0A4AF24CA186E00D42F6E /* ViewControllerSelectWord.swift */; };
 		DBAA1BD125009F5100C891A2 /* WordModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBAA1BD025009F5100C891A2 /* WordModel.swift */; };
 		DBAA1BD325009F6600C891A2 /* AppInfoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBAA1BD225009F6600C891A2 /* AppInfoModel.swift */; };
+		DBBB84AA2509E2B400019FD4 /* ViewControllerMain.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBBB84A92509E2B400019FD4 /* ViewControllerMain.swift */; };
 		DBF13F3E24D7EF44004910F1 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DBF13F3D24D7EF44004910F1 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
@@ -60,7 +61,6 @@
 		DB4D71B524C56F9500333C98 /* FE単語帳.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "FE単語帳.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DB4D71B824C56F9500333C98 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DB4D71BA24C56F9500333C98 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		DB4D71BC24C56F9500333C98 /* ViewControllerTop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerTop.swift; sourceTree = "<group>"; };
 		DB4D71BF24C56F9500333C98 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		DB4D71C124C56F9600333C98 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DB4D71C424C56F9600333C98 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -76,10 +76,12 @@
 		DB61286124C5933E00B86CAF /* ViewControllerSelectGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerSelectGroup.swift; sourceTree = "<group>"; };
 		DB6EE0ED24C9B3B40029A499 /* wordList.csv */ = {isa = PBXFileReference; lastKnownFileType = text; path = wordList.csv; sourceTree = "<group>"; };
 		DB6EE0EF24C9B8970029A499 /* Word.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Word.swift; sourceTree = "<group>"; };
+		DB8B9DB92509658900517F00 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		DBA0A4AB24C9E4B100D42F6E /* AppInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppInfo.swift; sourceTree = "<group>"; };
 		DBA0A4AF24CA186E00D42F6E /* ViewControllerSelectWord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerSelectWord.swift; sourceTree = "<group>"; };
 		DBAA1BD025009F5100C891A2 /* WordModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordModel.swift; sourceTree = "<group>"; };
 		DBAA1BD225009F6600C891A2 /* AppInfoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppInfoModel.swift; sourceTree = "<group>"; };
+		DBBB84A92509E2B400019FD4 /* ViewControllerMain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerMain.swift; sourceTree = "<group>"; };
 		DBF13F3D24D7EF44004910F1 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -161,7 +163,8 @@
 				DB4D71B824C56F9500333C98 /* AppDelegate.swift */,
 				DB4D71BA24C56F9500333C98 /* SceneDelegate.swift */,
 				DB524FCF24F79EA800BFD4BD /* ViewControllerShowAppExplanation.swift */,
-				DB4D71BC24C56F9500333C98 /* ViewControllerTop.swift */,
+				DBBB84A92509E2B400019FD4 /* ViewControllerMain.swift */,
+				DB8B9DB92509658900517F00 /* TabBarController.swift */,
 				DB61286124C5933E00B86CAF /* ViewControllerSelectGroup.swift */,
 				DBA0A4AF24CA186E00D42F6E /* ViewControllerSelectWord.swift */,
 				DB39B4E924CC877800319E4D /* ViewControllerShowWord.swift */,
@@ -439,15 +442,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DB4D71BD24C56F9500333C98 /* ViewControllerTop.swift in Sources */,
 				DB4D71B924C56F9500333C98 /* AppDelegate.swift in Sources */,
 				DB6EE0F024C9B8970029A499 /* Word.swift in Sources */,
 				DB39B4EA24CC877800319E4D /* ViewControllerShowWord.swift in Sources */,
 				DB61286224C5933E00B86CAF /* ViewControllerSelectGroup.swift in Sources */,
 				DBA0A4B024CA186E00D42F6E /* ViewControllerSelectWord.swift in Sources */,
+				DBBB84AA2509E2B400019FD4 /* ViewControllerMain.swift in Sources */,
 				DB4D71BB24C56F9500333C98 /* SceneDelegate.swift in Sources */,
 				DBA0A4AC24C9E4B100D42F6E /* AppInfo.swift in Sources */,
 				DB524FD024F79EA800BFD4BD /* ViewControllerShowAppExplanation.swift in Sources */,
+				DB8B9DBA2509658900517F00 /* TabBarController.swift in Sources */,
 				DBAA1BD325009F6600C891A2 /* AppInfoModel.swift in Sources */,
 				DBAA1BD125009F5100C891A2 /* WordModel.swift in Sources */,
 			);
@@ -627,7 +631,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "FE単語帳/FE単語帳.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1.1;
+				CURRENT_PROJECT_VERSION = 1.2;
 				DEVELOPMENT_TEAM = PZ57CQX5S8;
 				INFOPLIST_FILE = "FE単語帳/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -648,7 +652,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "FE単語帳/FE単語帳.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1.1;
+				CURRENT_PROJECT_VERSION = 1.2;
 				DEVELOPMENT_TEAM = PZ57CQX5S8;
 				INFOPLIST_FILE = "FE単語帳/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (

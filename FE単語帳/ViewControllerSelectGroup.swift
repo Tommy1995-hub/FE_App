@@ -43,9 +43,25 @@ class ViewControllerSelectGroup: UIViewController {
         }
     }
     
-    //戻るボタン押下
-    @IBAction func pressReturn(_ sender: Any) {
-        self.dismiss(animated: true, completion: nil)
+    //リフレッシュボタン押下
+    @IBAction func pressArrowButton(_ sender: Any) {
+        //「分野から選択」「単語を選択」を切り替え
+        if(preScreenInfo == 1){
+            preScreenInfo = 0
+            selectGroupShowBox = groupBox
+            sectionShowBox = groupSectionBox
+        }
+        //「単語を選択」が押された
+        else if(preScreenInfo == 0){
+            preScreenInfo = 1
+            selectGroupShowBox = fieldBox
+            sectionShowBox = fieldSectionBox
+        }
+        else{
+            //処理なし
+        }
+        //View再表示
+        selectGroupTable.reloadData()
     }
 }
 

@@ -11,6 +11,7 @@ import UIKit
 
 class ViewControllerSelectWord: UIViewController {
     @IBOutlet weak var selectWordTable: UITableView!
+    @IBOutlet weak var returnButton: UIBarButtonItem!
     var selectWordShowBox: [Word] = []
     let accessWordModel:WordModel = WordModel()
     let accessAppInfoModel:AppInfoModel = AppInfoModel()
@@ -43,6 +44,9 @@ class ViewControllerSelectWord: UIViewController {
             //お気に入り単語取得
             selectWordShowBox = []
             selectWordShowBox = accessWordModel.getWordByFavorite()
+            //「戻るボタン」無効化
+            returnButton.isEnabled = false
+            returnButton.tintColor = UIColor.clear
             //View再表示
             selectWordTable.reloadData()
         }

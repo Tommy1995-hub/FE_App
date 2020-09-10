@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="SMF-g3-5qd">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
@@ -94,76 +94,9 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oI6-dw-0lk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-4908.695652173913" y="-794.19642857142856"/>
+            <point key="canvasLocation" x="-3223" y="-2239"/>
         </scene>
-        <!--View Controller Top-->
-        <scene sceneID="tne-QT-ifu">
-            <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewControllerTop" customModule="FE単語帳" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Sme-Yp-TaU">
-                                <rect key="frame" x="0.0" y="44" width="414" height="44"/>
-                                <color key="barTintColor" red="1" green="0.98280419460000001" blue="0.75212638399999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <items>
-                                    <navigationItem title="基本情報技術者 単語集" id="UVW-y8-rkf">
-                                        <barButtonItem key="rightBarButtonItem" image="info.circle" catalog="system" id="HL9-Ox-u8Z">
-                                            <connections>
-                                                <action selector="pressInfoButton:" destination="BYZ-38-t0r" id="v1k-zn-6sI"/>
-                                            </connections>
-                                        </barButtonItem>
-                                    </navigationItem>
-                                </items>
-                            </navigationBar>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="eYp-G1-0hA">
-                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="topTableViewCell" textLabel="rlB-dm-WE0" rowHeight="100" style="IBUITableViewCellStyleDefault" id="L4O-Sb-331">
-                                        <rect key="frame" x="0.0" y="28" width="414" height="100"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="L4O-Sb-331" id="7Bu-0e-c2f">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="100"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="rlB-dm-WE0">
-                                                    <rect key="frame" x="20" y="0.0" width="374" height="100"/>
-                                                    <autoresizingMask key="autoresizingMask"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                </prototypes>
-                            </tableView>
-                        </subviews>
-                        <color key="backgroundColor" red="1" green="0.98280419460000001" blue="0.75212638399999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <constraints>
-                            <constraint firstItem="eYp-G1-0hA" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="3Qa-rC-WZU"/>
-                            <constraint firstItem="eYp-G1-0hA" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="M0x-Sw-rJU"/>
-                            <constraint firstItem="Sme-Yp-TaU" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="SbF-bh-2Jn"/>
-                            <constraint firstItem="eYp-G1-0hA" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Tu6-Ze-gGh"/>
-                            <constraint firstItem="Sme-Yp-TaU" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="V3e-tU-mue"/>
-                            <constraint firstItem="Sme-Yp-TaU" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Va0-Dw-oa3"/>
-                            <constraint firstItem="eYp-G1-0hA" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="VqF-DG-gX2"/>
-                            <constraint firstItem="eYp-G1-0hA" firstAttribute="top" secondItem="Sme-Yp-TaU" secondAttribute="bottom" id="nKy-5E-iRs"/>
-                            <constraint firstItem="Sme-Yp-TaU" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="pBm-pS-gPP"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                    </view>
-                    <connections>
-                        <outlet property="topTableView" destination="eYp-G1-0hA" id="nDQ-N6-p5Q"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-4065.217391304348" y="-793.52678571428567"/>
-        </scene>
-        <!--View Controller Select Group-->
+        <!--探す-->
         <scene sceneID="WNF-lg-OcQ">
             <objects>
                 <viewController storyboardIdentifier="ViewControllerSelectGroup" id="YBO-Ao-RR1" customClass="ViewControllerSelectGroup" customModule="FE単語帳" customModuleProvider="target" sceneMemberID="viewController">
@@ -172,7 +105,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="83n-6t-6go">
-                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="selectGroupTableCell" textLabel="slk-aI-y0D" rowHeight="75" style="IBUITableViewCellStyleDefault" id="iwh-BD-8uH">
@@ -199,9 +132,9 @@
                                 <color key="barTintColor" red="1" green="0.98280419460000001" blue="0.75212638399999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <items>
                                     <navigationItem id="BbY-Ha-FjX">
-                                        <barButtonItem key="leftBarButtonItem" title="戻る" style="plain" id="9bh-iZ-Yka">
+                                        <barButtonItem key="rightBarButtonItem" image="arrow.clockwise" catalog="system" id="ybT-x9-w9B">
                                             <connections>
-                                                <action selector="pressReturn:" destination="YBO-Ao-RR1" id="Rzn-Ep-Bpd"/>
+                                                <action selector="pressArrowButton:" destination="YBO-Ao-RR1" id="8NA-7x-wef"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>
@@ -222,15 +155,113 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="xde-UI-zfG"/>
                     </view>
+                    <tabBarItem key="tabBarItem" tag="2" title="探す" image="magnifyingglass" catalog="system" id="WVg-kR-0y8"/>
                     <connections>
                         <outlet property="selectGroupTable" destination="83n-6t-6go" id="kDx-of-Awm"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Y8h-6G-Zhn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-3223.1884057971015" y="-794.19642857142856"/>
+            <point key="canvasLocation" x="-4065" y="-794"/>
         </scene>
-        <!--View Controller Show Word-->
+        <!--トップ-->
+        <scene sceneID="uB8-0A-LuC">
+            <objects>
+                <viewController storyboardIdentifier="ViewControllerMain" id="usp-Jo-WZQ" customClass="ViewControllerMain" customModule="FE単語帳" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="JdM-3V-QFT">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cbD-4y-a8t">
+                                <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <color key="barTintColor" red="1" green="0.98248648319999998" blue="0.76420937639999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <items>
+                                    <navigationItem title="基本情報技術者 単語帳" id="KKn-Qg-78U">
+                                        <barButtonItem key="rightBarButtonItem" image="info.circle" catalog="system" id="HL9-Ox-u8Z">
+                                            <connections>
+                                                <action selector="pressInfoButton:" destination="usp-Jo-WZQ" id="Qu5-2V-kDb"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="foe-GP-ceE">
+                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Boe-u1-zWZ">
+                                    <size key="itemSize" width="414" height="128"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="LQt-p9-sWa">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="128"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="Rp0-0d-8py">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="128"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </collectionViewCellContentView>
+                                        <size key="customSize" width="414" height="128"/>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="gM1-PC-YqD">
+                                <rect key="frame" x="0.0" y="236" width="414" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="QYs-HS-KZt">
+                                    <size key="itemSize" width="414" height="578"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="1LT-il-BkX">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="578"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="hZv-e6-1b7">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="578"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </collectionViewCellContentView>
+                                        <size key="customSize" width="414" height="578"/>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="0.98248648319999998" blue="0.76420937639999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <viewLayoutGuide key="safeArea" id="hD5-DS-hpA"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" tag="1" title="トップ" image="house.fill" catalog="system" id="6if-DR-IOQ"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3Mn-OY-eAr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-4065.217391304348" y="-2239.2857142857142"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="TGH-DH-DM5">
+            <objects>
+                <tabBarController storyboardIdentifier="TabBarController" id="SMF-g3-5qd" customClass="TabBarController" customModule="FE単語帳" customModuleProvider="target" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Fhm-PK-irh">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="barTintColor" red="1" green="0.98248648319999998" blue="0.76420937639999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="usp-Jo-WZQ" kind="relationship" relationship="viewControllers" id="Bwn-aj-A8A"/>
+                        <segue destination="YBO-Ao-RR1" kind="relationship" relationship="viewControllers" id="LTz-q4-brm"/>
+                        <segue destination="hnb-hX-UmV" kind="relationship" relationship="viewControllers" id="kMi-Cw-InS"/>
+                        <segue destination="wi5-Mb-IRT" kind="relationship" relationship="viewControllers" id="0Ux-Ht-Gx1"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="RAW-Kh-qoi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-4065" y="-1528"/>
+        </scene>
+        <!--ランダム-->
         <scene sceneID="k3J-hq-AQZ">
             <objects>
                 <viewController storyboardIdentifier="ViewControllerShowWord" id="wi5-Mb-IRT" customClass="ViewControllerShowWord" customModule="FE単語帳" customModuleProvider="target" sceneMemberID="viewController">
@@ -258,7 +289,7 @@
                                 </items>
                             </navigationBar>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" tag="10" contentMode="scaleToFill" restorationIdentifier="showWordCollection" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="qsH-KC-YWu">
-                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
                                 <color key="backgroundColor" red="1" green="0.98280419460000001" blue="0.75212638399999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <rect key="contentStretch" x="0.0" y="0.0" width="0.40000000000000002" height="0.40000000000000002"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="rIr-GV-aTA">
@@ -353,16 +384,18 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="4Db-6e-9f1"/>
                     </view>
+                    <tabBarItem key="tabBarItem" tag="4" title="ランダム" image="questionmark.circle.fill" catalog="system" id="NuF-jt-T4a"/>
                     <connections>
                         <outlet property="nextButton" destination="6PR-9N-KXM" id="CYP-ZV-YDS"/>
+                        <outlet property="returnButton" destination="UHv-Af-gCb" id="qDU-tG-sfr"/>
                         <outlet property="showWordCollection" destination="qsH-KC-YWu" id="qgP-UD-TKb"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RDt-UB-Inv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-4065.217391304348" y="-103.125"/>
+            <point key="canvasLocation" x="-2391" y="-794"/>
         </scene>
-        <!--View Controller Select Word-->
+        <!--お気に入り-->
         <scene sceneID="eJY-t7-cP0">
             <objects>
                 <viewController storyboardIdentifier="ViewControllerSelectWord" id="hnb-hX-UmV" customClass="ViewControllerSelectWord" customModule="FE単語帳" customModuleProvider="target" sceneMemberID="viewController">
@@ -384,7 +417,7 @@
                                 </items>
                             </navigationBar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="6rN-ir-qhF">
-                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="selectWordTableCell" textLabel="HSD-cP-DDv" rowHeight="75" style="IBUITableViewCellStyleDefault" id="gL1-Yz-6ij">
@@ -421,16 +454,23 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="x4H-WS-5Qv"/>
                     </view>
+                    <tabBarItem key="tabBarItem" tag="3" title="お気に入り" image="heart.fill" catalog="system" id="ePe-BB-ce5"/>
                     <connections>
+                        <outlet property="returnButton" destination="4vK-h8-5Ji" id="31q-x9-p4e"/>
                         <outlet property="selectWordTable" destination="6rN-ir-qhF" id="Owx-2g-1Yj"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="D5u-IA-1Jc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-3223.1884057971015" y="-103.125"/>
+            <point key="canvasLocation" x="-3223" y="-794"/>
         </scene>
     </scenes>
     <resources>
+        <image name="arrow.clockwise" catalog="system" width="115" height="128"/>
+        <image name="heart.fill" catalog="system" width="128" height="109"/>
+        <image name="house.fill" catalog="system" width="128" height="106"/>
         <image name="info.circle" catalog="system" width="128" height="121"/>
+        <image name="magnifyingglass" catalog="system" width="128" height="115"/>
+        <image name="questionmark.circle.fill" catalog="system" width="128" height="121"/>
     </resources>
 </document>

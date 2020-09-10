@@ -13,6 +13,7 @@ import HeartButton
 class ViewControllerShowWord: UIViewController {
     @IBOutlet weak var showWordCollection: UICollectionView!
     @IBOutlet weak var nextButton: UIBarButtonItem!
+    @IBOutlet weak var returnButton: UIBarButtonItem!
     var WordInfo:Word = Word()
     let accessWordModel:WordModel = WordModel()
     let accessAppInfoModel:AppInfoModel = AppInfoModel()
@@ -24,11 +25,24 @@ class ViewControllerShowWord: UIViewController {
         showWordCollection.dataSource = self
         showWordCollection.isScrollEnabled = false
         view.addSubview(showWordCollection)
+    }
+    
+    //View表示前処理
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         // 「ランダムに表示」からの遷移でなければ「次へ」ボタン無効化
         if(preScreenInfo != 3){
             nextButton.isEnabled = false
             nextButton.tintColor = UIColor.clear
         }
+        // 「ランダムに表示」からの遷移であればWord情報をランダム取得&「戻るボタン」無効化
+        else{
+            WordInfo = accessWordModel.getRandomWord()
+            returnButton.isEnabled = false
+            returnButton.tintColor = UIColor.clear
+        }
+        //View再表示
+        showWordCollection.reloadData()
     }
     
     //View表示後処理
