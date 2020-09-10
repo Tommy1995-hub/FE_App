@@ -81,6 +81,8 @@ extension ViewControllerSelectWord: UITableViewDataSource,UITableViewDelegate{
         let next = storyboard.instantiateViewController(withIdentifier: "ViewControllerShowWord") as! ViewControllerShowWord
         next.modalPresentationStyle = .fullScreen
         next.WordInfo = selectWordShowBox[indexPath.row]
+        next.WordBox = selectWordShowBox
+        next.Index = indexPath.row
         self.present(next, animated: true)
     }
 }

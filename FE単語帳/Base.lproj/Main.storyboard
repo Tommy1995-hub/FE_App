@@ -280,11 +280,18 @@
                                                 <action selector="pressReturn:" destination="wi5-Mb-IRT" id="5cD-qu-v22"/>
                                             </connections>
                                         </barButtonItem>
-                                        <barButtonItem key="rightBarButtonItem" title="次へ" id="6PR-9N-KXM">
-                                            <connections>
-                                                <action selector="pressNext:" destination="wi5-Mb-IRT" id="Vq7-ss-xFB"/>
-                                            </connections>
-                                        </barButtonItem>
+                                        <rightBarButtonItems>
+                                            <barButtonItem image="chevron.right" catalog="system" id="6PR-9N-KXM">
+                                                <connections>
+                                                    <action selector="pressNext:" destination="wi5-Mb-IRT" id="Vq7-ss-xFB"/>
+                                                </connections>
+                                            </barButtonItem>
+                                            <barButtonItem image="chevron.left" catalog="system" id="Jy2-4m-T5E">
+                                                <connections>
+                                                    <action selector="pressBack:" destination="wi5-Mb-IRT" id="hAw-q1-U96"/>
+                                                </connections>
+                                            </barButtonItem>
+                                        </rightBarButtonItems>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
@@ -386,7 +393,7 @@
                     </view>
                     <tabBarItem key="tabBarItem" tag="4" title="ランダム" image="questionmark.circle.fill" catalog="system" id="NuF-jt-T4a"/>
                     <connections>
-                        <outlet property="nextButton" destination="6PR-9N-KXM" id="CYP-ZV-YDS"/>
+                        <outlet property="backButton" destination="Jy2-4m-T5E" id="meo-aY-8du"/>
                         <outlet property="returnButton" destination="UHv-Af-gCb" id="qDU-tG-sfr"/>
                         <outlet property="showWordCollection" destination="qsH-KC-YWu" id="qgP-UD-TKb"/>
                     </connections>
@@ -467,6 +474,8 @@
     </scenes>
     <resources>
         <image name="arrow.clockwise" catalog="system" width="115" height="128"/>
+        <image name="chevron.left" catalog="system" width="96" height="128"/>
+        <image name="chevron.right" catalog="system" width="96" height="128"/>
         <image name="heart.fill" catalog="system" width="128" height="109"/>
         <image name="house.fill" catalog="system" width="128" height="106"/>
         <image name="info.circle" catalog="system" width="128" height="121"/>

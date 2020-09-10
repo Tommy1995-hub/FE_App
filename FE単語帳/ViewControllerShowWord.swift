@@ -12,9 +12,11 @@ import HeartButton
 
 class ViewControllerShowWord: UIViewController {
     @IBOutlet weak var showWordCollection: UICollectionView!
-    @IBOutlet weak var nextButton: UIBarButtonItem!
+    @IBOutlet weak var backButton: UIBarButtonItem!
     @IBOutlet weak var returnButton: UIBarButtonItem!
     var WordInfo:Word = Word()
+    var WordBox:[Word] = []
+    var Index:Int = 0
     let accessWordModel:WordModel = WordModel()
     let accessAppInfoModel:AppInfoModel = AppInfoModel()
     //初期メソッド
@@ -30,16 +32,17 @@ class ViewControllerShowWord: UIViewController {
     //View表示前処理
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        // 「ランダムに表示」からの遷移でなければ「次へ」ボタン無効化
+        // 「ランダムに表示」からの遷移でなければ処理なし
         if(preScreenInfo != 3){
-            nextButton.isEnabled = false
-            nextButton.tintColor = UIColor.clear
+            //
         }
-        // 「ランダムに表示」からの遷移であればWord情報をランダム取得&「戻るボタン」無効化
+        // 「ランダムに表示」からの遷移であればWord情報をランダム取得&「戻るボタン」無効化&「backボタン」無効化
         else{
             WordInfo = accessWordModel.getRandomWord()
             returnButton.isEnabled = false
             returnButton.tintColor = UIColor.clear
+            backButton.isEnabled = false
+            backButton.tintColor = UIColor.clear
         }
         //View再表示
         showWordCollection.reloadData()
@@ -95,8 +98,32 @@ class ViewControllerShowWord: UIViewController {
     
     //次へボタン押下
     @IBAction func pressNext(_ sender: Any) {
-        //ランダムに単語情報取得
-        WordInfo = accessWordModel.getRandomWord()
+        //ランダムから遷移
+        if(preScreenInfo == 3){
+            //ランダムに単語情報取得
+            WordInfo = accessWordModel.getRandomWord()
+        }
+        //それ以外
+        else{
+            Index += 1
+            if(WordBox.count <= Index){
+                //配列の先頭へ戻す
+                Index = 0
+            }
+            WordInfo = WordBox[Index]
+        }
+        //View再表示
+        showWordCollection.reloadData()
+    }
+    
+    //Backボタン押下
+    @IBAction func pressBack(_ sender: Any) {
+        Index -= 1
+        if(Index < 0){
+            //配列の最後尾へ戻す
+            Index = WordBox.count - 1
+        }
+        WordInfo = WordBox[Index]
         //View再表示
         showWordCollection.reloadData()
     }

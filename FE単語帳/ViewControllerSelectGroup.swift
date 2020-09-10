@@ -28,19 +28,22 @@ class ViewControllerSelectGroup: UIViewController {
         selectGroupTable.dataSource = self
         selectGroupTable.delegate = self
         view.addSubview(selectGroupTable)
+    }
+    
+    //View表示前処理
+    override func viewWillAppear(_ animated: Bool) {
         //「分野から選択」が押された
         if(preScreenInfo == 1){
             selectGroupShowBox = fieldBox
             sectionShowBox = fieldSectionBox
         }
         //「単語を選択」が押された
-        else if(preScreenInfo == 0){
+        else{
             selectGroupShowBox = groupBox
             sectionShowBox = groupSectionBox
         }
-        else{
-            //処理なし
-        }
+        //View再表示
+        selectGroupTable.reloadData()
     }
     
     //リフレッシュボタン押下
