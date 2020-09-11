@@ -1,21 +1,24 @@
 PODS:
-  - Firebase/Analytics (6.31.1):
+  - Charts (3.5.0):
+    - Charts/Core (= 3.5.0)
+  - Charts/Core (3.5.0)
+  - Firebase/Analytics (6.32.0):
     - Firebase/Core
-  - Firebase/Core (6.31.1):
+  - Firebase/Core (6.32.0):
     - Firebase/CoreOnly
-    - FirebaseAnalytics (= 6.8.0)
-  - Firebase/CoreOnly (6.31.1):
-    - FirebaseCore (= 6.10.1)
-  - FirebaseAnalytics (6.8.0):
+    - FirebaseAnalytics (= 6.8.1)
+  - Firebase/CoreOnly (6.32.0):
+    - FirebaseCore (= 6.10.2)
+  - FirebaseAnalytics (6.8.1):
     - FirebaseCore (~> 6.10)
     - FirebaseInstallations (~> 1.6)
-    - GoogleAppMeasurement (= 6.8.0)
+    - GoogleAppMeasurement (= 6.8.1)
     - GoogleUtilities/AppDelegateSwizzler (~> 6.7)
     - GoogleUtilities/MethodSwizzler (~> 6.7)
     - GoogleUtilities/Network (~> 6.7)
     - "GoogleUtilities/NSData+zlib (~> 6.7)"
     - nanopb (~> 1.30906.0)
-  - FirebaseCore (6.10.1):
+  - FirebaseCore (6.10.2):
     - FirebaseCoreDiagnostics (~> 1.6)
     - GoogleUtilities/Environment (~> 6.7)
     - GoogleUtilities/Logger (~> 6.7)
@@ -29,7 +32,7 @@ PODS:
     - GoogleUtilities/Environment (~> 6.7)
     - GoogleUtilities/UserDefaults (~> 6.7)
     - PromisesObjC (~> 1.2)
-  - GoogleAppMeasurement (6.8.0):
+  - GoogleAppMeasurement (6.8.1):
     - GoogleUtilities/AppDelegateSwizzler (~> 6.7)
     - GoogleUtilities/MethodSwizzler (~> 6.7)
     - GoogleUtilities/Network (~> 6.7)
@@ -63,19 +66,21 @@ PODS:
   - nanopb/decode (1.30906.0)
   - nanopb/encode (1.30906.0)
   - PromisesObjC (1.2.10)
-  - Realm (5.3.6):
-    - Realm/Headers (= 5.3.6)
-  - Realm/Headers (5.3.6)
-  - RealmSwift (5.3.6):
-    - Realm (= 5.3.6)
+  - Realm (5.4.0):
+    - Realm/Headers (= 5.4.0)
+  - Realm/Headers (5.4.0)
+  - RealmSwift (5.4.0):
+    - Realm (= 5.4.0)
 
 DEPENDENCIES:
+  - Charts
   - Firebase/Analytics
   - HeartButton
   - RealmSwift
 
 SPEC REPOS:
   trunk:
+    - Charts
     - Firebase
     - FirebaseAnalytics
     - FirebaseCore
@@ -91,20 +96,21 @@ SPEC REPOS:
     - RealmSwift
 
 SPEC CHECKSUMS:
-  Firebase: 658370fa0181826a74b7cfca8d68c5856ca749ae
-  FirebaseAnalytics: 0ca9aa2af7cc4dc92392b7a78bfc49feaa2eb60f
-  FirebaseCore: 6fb954e350af0885803d5aa49865d15d9a6b264c
+  Charts: 40a08591df1f8ad5c223ddedfb1a06da92f24f7c
+  Firebase: afa030f17f5421810f379a42b0e5d3302d27eb26
+  FirebaseAnalytics: a4d98464f455f5056063932123fa441025322f30
+  FirebaseCore: 1d697bb944bf2af5fc248f1a66e165c9dd88bf97
   FirebaseCoreDiagnostics: 7415bfb3883b3500c5a95c42b6ba66baae78f600
   FirebaseInstallations: 466c7b4d1f58fe16707693091da253726a731ed2
-  GoogleAppMeasurement: ecc30d0ab5b66d7d18e85ce1b8e2b345db60626d
+  GoogleAppMeasurement: e3618c6e9f5166a6b320b03b759da3b04ec2a101
   GoogleDataTransport: e85fb700c9b027079ce182c3d08e12e0f9618bb4
   GoogleUtilities: 7f2f5a07f888cdb145101d6042bc4422f57e70b3
   HeartButton: 0d75e41d05292add5f1490c3a616ad24d7db4990
   nanopb: 59317e09cf1f1a0af72f12af412d54edf52603fc
   PromisesObjC: b14b1c6b68e306650688599de8a45e49fae81151
-  Realm: cd400dd7e5b5bb5c8ae9842eecd73792369e6ec0
-  RealmSwift: 99a16dbdee5d6dfb3d91d56088a9f8c15c0871d1
+  Realm: 8949757d76e2451a53d727954c607e49c2542b77
+  RealmSwift: 0b7d7121e842724188123c6086831ae6d2952050
 
-PODFILE CHECKSUM: 80dec7707a8ace595cf70e432594b8b5a7048246
+PODFILE CHECKSUM: 53ab196a656a1d338bf40e1861345afe25e15441
 
 COCOAPODS: 1.9.1

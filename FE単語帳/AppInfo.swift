@@ -15,4 +15,7 @@ class AppInfo: Object {
     @objc dynamic var hideFlag:Int = 0
     @objc dynamic var inputWordNum:Int = 0
     @objc dynamic var lasttimeDate:String = ""
+    @objc dynamic var inputTechnologyNum:Int = 0
+    @objc dynamic var inputManagementNum:Int = 0
+    @objc dynamic var inputStrategyNum:Int = 0
 }

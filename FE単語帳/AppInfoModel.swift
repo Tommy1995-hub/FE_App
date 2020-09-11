@@ -17,7 +17,7 @@ var receiveGroupInfo:Int = 99
 
 //AppInfoモデルクラス
 class AppInfoModel {
-    let config = Realm.Configuration(schemaVersion: 3)
+    let config = Realm.Configuration(schemaVersion: 4)
     //DBプリセット
     func presetDB(){
         // RealmからAppInfo情報取得
@@ -36,6 +36,9 @@ class AppInfoModel {
             setAppInfo.hideFlag = 0
             setAppInfo.inputWordNum = 0
             setAppInfo.lasttimeDate = date.string(from: now)
+            setAppInfo.inputTechnologyNum = 0
+            setAppInfo.inputManagementNum = 0
+            setAppInfo.inputStrategyNum = 0
             do {
                 try realm.write {
                     realm.add(setAppInfo)
@@ -63,6 +66,9 @@ class AppInfoModel {
                 appInfo[0].lasttimeDate = date.string(from: now)
                 //インプット単語数を初期化
                 appInfo[0].inputWordNum = 0
+                appInfo[0].inputTechnologyNum = 0
+                appInfo[0].inputManagementNum = 0
+                appInfo[0].inputStrategyNum = 0
             }
         }
     }
@@ -72,8 +78,23 @@ class AppInfoModel {
         // RealmからAppInfo情報取得
         let realm = try! Realm(configuration:config)
         let appInfo = realm.objects(AppInfo.self)
+        //各分野の中からインプット数が最大のものを抽出
+        var field:String = ""
+        let maxField = [appInfo[0].inputTechnologyNum, appInfo[0].inputManagementNum, appInfo[0].inputStrategyNum]
+        if(maxField.max() == 0){
+            field = "本日は学習を行えていません、、、"
+        }
+        else if(maxField.max() == maxField[0]){
+            field = "本日はテクノロジ分野を重点的に学習しました"
+        }
+        else if(maxField.max() == maxField[0]){
+            field = "本日はマネジメント分野を重点的に学習しました"
+        }
+        else{
+            field = "本日はストラテジ分野を重点的に学習しました"
+        }
         //Tweet
-        let text = "本日のインプット単語数：\(appInfo[0].inputWordNum)\nスキマ時間を有効活用！効率的に学習して単語を覚えよう！\n＃基本情報技術者単語帳\nhttps://itunes.apple.com/jp/app/id1529835420?mt=8"
+        let text = "本日のインプット単語数：\(appInfo[0].inputWordNum)\n\(field)\nスキマ時間を有効活用！効率的に学習して単語を覚えよう！\n＃基本情報技術者単語帳\nhttps://itunes.apple.com/jp/app/id1529835420?mt=8"
         let encodedText = text.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)
         if let encodedText = encodedText,
             let url = URL(string: "https://twitter.com/intent/tweet?text=\(encodedText)") {
@@ -88,6 +109,33 @@ class AppInfoModel {
         let appInfo = realm.objects(AppInfo.self)
         
         return appInfo[0].inputWordNum
+    }
+    
+    //インプット単語数(テクノロジ)情報取得
+    func getInputTechnologyNum() -> Int{
+        // Realmから該当情報取得
+        let realm = try! Realm(configuration:config)
+        let appInfo = realm.objects(AppInfo.self)
+        
+        return appInfo[0].inputTechnologyNum
+    }
+    
+    //インプット単語数(マネジメント)情報取得
+    func getInputManagementNum() -> Int{
+        // Realmから該当情報取得
+        let realm = try! Realm(configuration:config)
+        let appInfo = realm.objects(AppInfo.self)
+        
+        return appInfo[0].inputManagementNum
+    }
+    
+    //インプット単語数(ストラテジ)情報取得
+    func getInputStrategyNum() -> Int{
+        // Realmから該当情報取得
+        let realm = try! Realm(configuration:config)
+        let appInfo = realm.objects(AppInfo.self)
+        
+        return appInfo[0].inputStrategyNum
     }
     
     //非表示フラグ情報取得
@@ -111,7 +159,7 @@ class AppInfoModel {
     }
     
     //インプット単語数インクリメント
-    func incInputWordNum(){
+    func incInputWordNum(_ field: Int){
         // Realmから該当情報取得
         let realm = try! Realm(configuration:config)
         let appInfo = realm.objects(AppInfo.self)
@@ -119,6 +167,28 @@ class AppInfoModel {
         let incInputWord = appInfo[0].inputWordNum + 1
         try! realm.write {
             appInfo[0].inputWordNum = incInputWord
+        }
+        //分野別インクリメント
+        if(field < 13){
+            //テクノロジ
+            let incInputField = appInfo[0].inputTechnologyNum + 1
+            try! realm.write {
+                appInfo[0].inputTechnologyNum = incInputField
+            }
+        }
+        else if(field < 16){
+            //マネジメント
+            let incInputField = appInfo[0].inputManagementNum + 1
+            try! realm.write {
+                appInfo[0].inputManagementNum = incInputField
+            }
+        }
+        else{
+            //ストラテジ
+            let incInputField = appInfo[0].inputStrategyNum + 1
+            try! realm.write {
+                appInfo[0].inputStrategyNum = incInputField
+            }
         }
     }
 }

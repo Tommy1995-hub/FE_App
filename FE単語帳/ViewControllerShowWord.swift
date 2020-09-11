@@ -191,7 +191,7 @@ extension ViewControllerShowWord: UICollectionViewDelegateFlowLayout, UICollecti
             //日付更新確認＆日付更新
             accessAppInfoModel.dateCheck()
             //インプット単語数更新
-            accessAppInfoModel.incInputWordNum()
+            accessAppInfoModel.incInputWordNum(WordInfo.field)
         }
         else if (indexPath.row == 1){
             item = collectionView.dequeueReusableCell(withReuseIdentifier: "explanationCell", for: indexPath)

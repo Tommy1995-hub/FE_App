@@ -209,10 +209,22 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <view tag="3" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="thN-VE-Jlz" customClass="PieChartView" customModule="Charts">
+                                                    <rect key="frame" x="0.0" y="133.5" width="414" height="300"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                </view>
+                                                <label opaque="NO" userInteractionEnabled="NO" tag="2" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="jkX-Mm-8fT">
+                                                    <rect key="frame" x="20" y="84" width="39.5" height="19.5"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="9Ip-c1-rIp" firstAttribute="top" secondItem="URC-jq-PGY" secondAttribute="top" constant="30" id="flh-7v-SC1"/>
-                                                <constraint firstItem="9Ip-c1-rIp" firstAttribute="leading" secondItem="URC-jq-PGY" secondAttribute="leading" constant="20" id="qQc-Ov-QpC"/>
+                                                <constraint firstItem="9Ip-c1-rIp" firstAttribute="top" secondItem="URC-jq-PGY" secondAttribute="top" constant="30" id="72E-0y-XXq"/>
+                                                <constraint firstItem="9Ip-c1-rIp" firstAttribute="leading" secondItem="URC-jq-PGY" secondAttribute="leading" constant="20" id="YTd-7b-yZp"/>
                                             </constraints>
                                         </collectionViewCellContentView>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

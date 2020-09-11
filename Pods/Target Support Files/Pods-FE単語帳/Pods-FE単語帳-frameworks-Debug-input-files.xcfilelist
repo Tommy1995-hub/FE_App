@@ -1,4 +1,5 @@
 ${PODS_ROOT}/Target Support Files/Pods-FE単語帳/Pods-FE単語帳-frameworks.sh
+${BUILT_PRODUCTS_DIR}/Charts/Charts.framework
 ${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework
 ${BUILT_PRODUCTS_DIR}/HeartButton/HeartButton.framework
 ${BUILT_PRODUCTS_DIR}/PromisesObjC/FBLPromises.framework

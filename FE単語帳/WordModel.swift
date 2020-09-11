@@ -11,7 +11,7 @@ import RealmSwift
 
 //Wordモデルクラス
 class WordModel {
-    let config = Realm.Configuration(schemaVersion: 3)
+    let config = Realm.Configuration(schemaVersion: 4)
     //DBプリセット
     func presetDB(){
         // RealmからWord情報取得
