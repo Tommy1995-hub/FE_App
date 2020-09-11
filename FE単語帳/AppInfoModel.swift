@@ -81,6 +81,15 @@ class AppInfoModel {
         }
     }
     
+    //インプット単語数情報取得
+    func getInputWordNum() -> Int{
+        // Realmから該当情報取得
+        let realm = try! Realm(configuration:config)
+        let appInfo = realm.objects(AppInfo.self)
+        
+        return appInfo[0].inputWordNum
+    }
+    
     //非表示フラグ情報取得
     func getHideFlag() -> Int{
         // Realmから該当情報取得
