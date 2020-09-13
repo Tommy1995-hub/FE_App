@@ -34,7 +34,7 @@ class ViewControllerShowAppExplanation: UIViewController {
 extension ViewControllerShowAppExplanation: UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {
     //Itemのレイアウト
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height * 1.2)
+        return CGSize(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height * 1.3)
     }
     //Itemの数
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -46,7 +46,7 @@ extension ViewControllerShowAppExplanation: UICollectionViewDelegateFlowLayout, 
         let item = collectionView.dequeueReusableCell(withReuseIdentifier: "appInfoCell", for: indexPath)
         //UILabel作成
         let label = item.viewWithTag(1) as! UILabel
-        let appExplanation:String = "本アプリケーションをご利用いただきありがとうございます。\n\n【利用方法】\n本アプリケーションは国家試験である基本情報技術者試験における頻出単語をまとめた単語帳です。「単語を選択」または「分野から選択」から単語を選択することで、特定の単語画面が表示されます。単語表示画面のお気に入りボタンを押下することで、「お気に入りを表示」欄にお気に入りした単語が表示されるようになります。「ランダムに表示」は全ての単語からランダムに一つ選択された単語を表示します。また、単語表示画面にて単語の説明文を非表示にすることも可能です。「Twitterでつぶやく」ではインプットした単語数をツイートすることができます。\n\n【免責事項】\n本アプリケーションの利用から生じた、いかなる損害について責任を負いかねますのでご了承下さい。また、本アプリケーションは試験の合格を保証するものではございません。あらかじめご了承下さい。"
+        let appExplanation:String = "本アプリケーションをご利用いただきありがとうございます。\n\n【利用方法】\n本アプリケーションは国家試験である基本情報技術者試験における頻出単語をまとめた単語帳です。画面下にある「探す」から特定の単語を選択することで、単語説明画面が表示されます。「探す」画面の右上にあるボタンを押下することで、名前順、分野別を切り替えて単語を探すことが可能です。単語説明画面のお気に入りボタンを押下することで、画面下にある「お気に入り」欄にお気に入りした単語が表示されるようになります。画面下にある「ランダム」は全ての単語からランダムに一つ選択された単語を表示します。また、単語表示画面にて単語の説明文を非表示にすることも可能です。トップ画面では本日中に学習した単語数が表示されます。画面右下にあるTweetボタンを押下することで、インプットした単語数をTwitterにてツイートし、共有することができます。\n\n【免責事項】\n本アプリケーションの利用から生じた、いかなる損害について責任を負いかねますのでご了承下さい。また、本アプリケーションは試験の合格を保証するものではございません。あらかじめご了承下さい。"
         label.text = appExplanation
         //UILabelの大きさ調整
         label.frame.size.height = label.frame.size.height
