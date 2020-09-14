@@ -94,7 +94,7 @@ class AppInfoModel {
             field = "本日はストラテジ分野を重点的に学習しました"
         }
         //Tweet
-        let text = "本日のインプット単語数：\(appInfo[0].inputWordNum)\n\(field)\nスキマ時間を有効活用！効率的に学習して単語を覚えよう！\n＃基本情報技術者単語帳\nhttps://itunes.apple.com/jp/app/id1529835420?mt=8"
+        let text = "本日のインプット単語数：\(appInfo[0].inputWordNum)\n\(field)\nスキマ時間を有効活用！効率的に学習して単語を覚えよう！\n＃基本情報技術者単語帳\napps.apple.com/jp/app/id1529835420?mt=8"
         let encodedText = text.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)
         if let encodedText = encodedText,
             let url = URL(string: "https://twitter.com/intent/tweet?text=\(encodedText)") {
