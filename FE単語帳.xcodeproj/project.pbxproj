@@ -631,13 +631,14 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "FE単語帳/FE単語帳.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1.3;
+				CURRENT_PROJECT_VERSION = 1.0;
 				DEVELOPMENT_TEAM = PZ57CQX5S8;
 				INFOPLIST_FILE = "FE単語帳/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.2;
 				PRODUCT_BUNDLE_IDENTIFIER = "firstApp.FE-App";
 				PRODUCT_NAME = "FE単語帳";
 				SWIFT_VERSION = 5.0;
@@ -652,13 +653,14 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "FE単語帳/FE単語帳.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1.3;
+				CURRENT_PROJECT_VERSION = 1.0;
 				DEVELOPMENT_TEAM = PZ57CQX5S8;
 				INFOPLIST_FILE = "FE単語帳/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.2;
 				PRODUCT_BUNDLE_IDENTIFIER = "firstApp.FE-App";
 				PRODUCT_NAME = "FE単語帳";
 				SWIFT_VERSION = 5.0;
